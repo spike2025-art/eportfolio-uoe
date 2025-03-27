@@ -1,50 +1,90 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  <title>Unit 3: Correlation & Regression</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-</head>
-<body class="is-preload">
-  <div id="wrapper">
+  <head>
+    <title>Unit 3: Correlation & Regression | Pavlos Papachristos</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
 
-    <!-- Header -->
-    <header id="header">
-      <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
-    </header>
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
 
-    <!-- Main -->
-    <div id="main" class="alt">
-      <section class="inner">
-        <header class="major">
-          <h1>Unit 3: Correlation & Regression</h1>
-        </header>
-
-        <p>This task involved analyzing how dataset transformation (noise, scale, offset) affects Pearson correlation and covariance using NumPy, Matplotlib, and SciPy.</p>
-
-        <h3>🔗 Notebook Access</h3>
-        <ul>
-          <li>
-            <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/refs/heads/main/Unit3_Covariance_Pearson_Correlation.ipynb" target="_blank">
-              📥 Download/View Notebook (.ipynb)
-            </a>
-          </li>
-          <li>
-            <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit3_Covariance_Pearson_Correlation.ipynb" target="_blank">
-              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
-            </a>
-          </li>
+      <!-- Menu -->
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
         </ul>
+      </nav>
 
-        <h3>📊 Summary</h3>
-        <p>By introducing varying degrees of noise, offset, and scaling, I simulated multiple runs and measured their effect on the correlation strength between two variables.</p>
+      <!-- Main -->
+      <div id="main" class="alt">
+        <section class="inner">
+          <header class="major">
+            <h1>Unit 3: Correlation & Regression</h1>
+            <p>Practical exploration of relationships between variables using Python and statistical methods.</p>
+          </header>
 
-        <h3>🧠 Reflection</h3>
-        <p><strong>What?</strong> I investigated how statistical relationships shift under data transformation.</p>
-        <p><strong>So What?</strong> I learned that correlation can appear weak when strong patterns are hidden by noise, making it critical to visualize and interpret beyond raw coefficients.</p>
-        <p><strong>What Next?</strong> I'll apply this in future ML tasks for feature selection, avoiding reliance on a single metric.</p>
-      </section>
+          <h2>📘 Notebooks & Dataset</h2>
+          <ul>
+            <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Covariance_Pearson_Correlation.ipynb" target="_blank">Covariance & Pearson Correlation</a></li>
+            <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Linear_Regression.ipynb" target="_blank">Linear Regression</a></li>
+            <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Multiple_Linear_Regression.ipynb" target="_blank">Multiple Linear Regression</a></li>
+            <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Polynomial_Regression.ipynb" target="_blank">Polynomial Regression</a></li>
+            <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/cars.csv" target="_blank">cars.csv Dataset</a></li>
+          </ul>
+
+          <h2>🧪 Observations & Reflections</h2>
+          <p>Each notebook was run with varied input parameters including sample size, noise, scaling, and feature interaction. Observations were recorded on:</p>
+          <ul>
+            <li>How noise affects correlation strength</li>
+            <li>Impact of adding or removing features in regression</li>
+            <li>Detecting underfitting or overfitting in models</li>
+            <li>Visualizing residuals and polynomial curves</li>
+          </ul>
+
+          <h2>🎓 Learning Outcomes</h2>
+          <ul>
+            <li>Articulated legal, ethical, and professional issues in using ML models</li>
+            <li>Understood data quality impacts on model performance</li>
+            <li>Practiced model interpretation and parameter tuning</li>
+          </ul>
+
+          <h2>📌 Next Steps</h2>
+          <p>I will apply these practices to larger and real-world datasets while integrating cross-validation and performance comparison across regression techniques.</p>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="mailto:pavlos.papachristos.patmos@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://www.linkedin.com/in/pavlos-papachristos-6a5561128/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+          </ul>
+          <ul class="copyright">
+            <li>&copy; Pavlos Papachristos</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
-  </div>
-</body>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
