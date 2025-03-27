@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Unit 3: Correlation & Regression</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section class="inner">
+        <header class="major">
+          <h1> Covariance and Pearson Correlation </h1>
+        </header>
+
+        <p>This unit involved a series of exercises exploring the impact of variable changes on correlation and regression outcomes using Python, Jupyter Notebooks, and real datasets.</p>
+
+        <!-- Covariance and Pearson Correlation Block -->
+        <section>
+          <h2> Covariance & Pearson Correlation</h2>
+          <p>This notebook investigates how dataset transformations (noise, scale, offset) affect covariance and correlation strength using NumPy, Matplotlib, and SciPy.</p>
+
+          <h3> Access</h3>
+          <ul>
+            <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Covariance_Pearson_Correlation.ipynb" target="_blank">📥 Download/View Notebook (.ipynb)</a></li>
+            <li><a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit3_Covariance_Pearson_Correlation.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a></li>
+          </ul>
+
+          <h3>📄 Description</h3>
+          <p>The notebook generates a base dataset and applies random noise, offsets, and scaling to simulate new data. Each variation is analyzed using covariance and Pearson's correlation to measure linear relationships.</p>
+
+          <h3> Code Snapshot</h3>
+<pre><code>np.random.seed(42)
+for i in range(5):
+  base = 20 * np.random.randn(1000) + 100
+  noise = np.random.randint(1, 40)
+  offset = np.random.randint(-100, 100)
+  scale = np.random.uniform(0.5, 1.5)
+
+  transformed = base * scale + noise * np.random.randn(1000) + offset
+  covariance = np.cov(base, transformed)[0][1]
+  corr, _ = pearsonr(base, transformed)
+  print(f"Run {i+1}: Covariance = {covariance:.2f}, Pearson = {corr:.4f}")</code></pre>
+
+          <h3> Results</h3>
+          <p>The correlation values ranged from weak to strong depending on the noise level and scaling. As noise increased, Pearson correlation weakened, demonstrating the effect of data quality on linear relationships.</p>
+
+          <h3> Reflection</h3>
+          <p><strong>What?</strong> Explored how statistical relationships shift under variable transformation.</p>
+          <p><strong>So What?</strong> Realized the importance of clean data and visualization in interpreting correlation coefficients correctly.</p>
+          <p><strong>What Next?</strong> Apply correlation filtering in future feature selection and preprocessing steps in ML pipelines.</p>
+        </section>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
