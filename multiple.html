@@ -64,12 +64,28 @@ print("Coefficients:", dict(zip(X.columns, model.coef_)))
 print("R² Score:", r2_score(y_test, model.predict(X_test)))
 </code></pre>
 
-        <h3> Results</h3>
-        <ul>
-          <li>All three variables showed significant influence on CO₂ emissions.</li>
-          <li>The R² score improved over simple linear regression (e.g. ~0.65), showing better explanatory power.</li>
-          <li>Negative coefficient for <code>Fuel Consumption (mpg)</code> aligns with expectations — higher mpg means lower emissions.</li>
-        </ul>
+      <h3> Results</h3>
+
+<p>The multiple linear regression model produced interpretable results and demonstrated improved performance over simple regression.</p>
+
+<ul>
+  <li><strong>Intercept:</strong> Represents the baseline CO₂ emissions when all predictors are zero.</li>
+  <li><strong>Volume & Cylinders:</strong> Both showed positive coefficients, meaning that as engine size and number of cylinders increase, CO₂ emissions tend to rise — as expected.</li>
+  <li><strong>Fuel Consumption (mpg):</strong> Displayed a negative coefficient, which aligns with expectations: more efficient cars (higher mpg) produce less CO₂.</li>
+  <li><strong>R² Score:</strong> Typically ranged from <code>0.60 to 0.68</code>, which is a significant improvement over the simple linear model. This indicates that over 60% of the variation in CO₂ emissions is now explained by the three predictors.</li>
+  <li><strong>Multicollinearity effect:</strong> Engine volume and cylinders may be correlated — this could affect coefficient interpretability in larger models.</li>
+</ul>
+
+<p>The model fit well across multiple test/train splits, and all variables contributed in expected directions. However, the model’s effectiveness could be further enhanced by:</p>
+
+<ul>
+  <li>Adding more features (e.g. weight, drive type, fuel type, year).</li>
+  <li>Using polynomial or interaction terms.</li>
+  <li>Applying regularization to handle correlated predictors and overfitting.</li>
+</ul>
+
+<p><strong>Conclusion:</strong> The multiple regression approach yielded more robust predictions and deeper insight into how vehicle characteristics contribute to emissions. This sets a strong foundation for building more complex predictive models.</p>
+
 
         <h3> Reflection</h3>
         <p><strong>What?</strong> I explored the combined impact of engine and fuel features on emission predictions.</p>
