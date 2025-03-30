@@ -76,6 +76,14 @@ print("R² Score:", r2_score(y_test, model.predict(X_test)))
   <li><strong>Multicollinearity effect:</strong> Engine volume and cylinders may be correlated — this could affect coefficient interpretability in larger models.</li>
 </ul>
 
+<h3> Note on Multicollinearity</h3>
+<p>In multiple regression, <strong>multicollinearity</strong> occurs when two or more predictor variables are highly correlated with each other. In this case, <code>Volume</code> and <code>Cylinders</code> may introduce multicollinearity, as larger engines often have more cylinders.</p>
+
+<p>This can enhance the predictive performance of the model, but it can make it difficult to determine the individual effect of each predictor. It may also lead to unstable coefficient estimates and reduce the model’s interpretability.</p>
+
+<p>If model interpretability is important, techniques such as <em>Variance Inflation Factor (VIF)</em> analysis, feature selection, or regularization (e.g., Ridge or Lasso regression) should be considered.</p>
+
+        
 <p>The model fit well across multiple test/train splits, and all variables contributed in expected directions. However, the model’s effectiveness could be further enhanced by:</p>
 
 <ul>
