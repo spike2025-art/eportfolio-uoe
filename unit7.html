@@ -1,0 +1,118 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Machine Learning January 2025 Unit 7: Perceptron Activities</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section class="inner">
+        <header class="major">
+          <h1>Machine Learning January 2025 Unit 7: Perceptron Activities</h1>
+          <p>Exploring Perceptron models and preprocessing techniques in machine learning.</p>
+        </header>
+
+        <h2> Task Overview</h2>
+        <p>This unit covers the foundations of Perceptron models, starting with simple structures and progressing to multi-layer neural networks. Tasks include preprocessing data, visualizations, and model training using Scikit-Learn.</p>
+
+        <h3> Access Notebooks</h3>
+        <ul>
+          <li>
+            <strong>Task A: Simple Perceptron</strong><br>
+            <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/unit7a_with_analysis.ipynb" target="_blank"> Download/View (.ipynb)</a>
+            |
+            <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/unit7a_with_analysis.ipynb" target="_blank">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+            </a>
+          </li>
+          <li>
+            <strong>Task B: Perceptron AND Operator</strong><br>
+            <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/unit7b_with_analysis.ipynb" target="_blank"> Download/View (.ipynb)</a>
+            |
+            <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/unit7b_with_analysis.ipynb" target="_blank">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+            </a>
+          </li>
+          <li>
+            <strong>Task C: Multi-layer Perceptron</strong><br>
+            <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/unit7c_with_analysis.ipynb" target="_blank"> Download/View (.ipynb)</a>
+            |
+            <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/unit7c_with_analysis.ipynb" target="_blank">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+            </a>
+          </li>
+        </ul>
+
+        <h3> Highlights</h3>
+        <ul>
+          <li>Identified missing values and handled them with imputation.</li>
+          <li>Calculated skewness and kurtosis to understand data distribution.</li>
+          <li>Generated heatmaps and scatter plots for correlation insights.</li>
+          <li>Replaced categorical data with numeric encoding for modeling.</li>
+          <li>Built and trained Perceptrons on basic AND logic and real data.</li>
+        </ul>
+
+        
+<h3> Results</h3>
+<p><strong>Approach:</strong> For each task, a synthetic dataset of 20 random values ranging from -100 to +100 was generated. This allowed us to simulate a wide range of input scenarios, providing insight into how each perceptron model processes different distributions.</p>
+<p><strong>Task A – Simple Perceptron:</strong> The dataset had a mean near -8.46, with a positive skew (0.28) and a flat distribution (kurtosis: -1.26). This shows the data was slightly right-leaning and uniformly spread, indicating the perceptron’s stability even in less centered data distributions.</p>
+<p><strong>Task B – Perceptron AND Operator:</strong> The distribution was close to symmetric (skew: 0.23) with similarly low kurtosis (-1.08), demonstrating that even logical operations maintain reliable performance under varying inputs, especially in linearly separable tasks.</p>
+<p><strong>Task C – Multi-layer Perceptron:</strong> The most balanced input with skewness near 0.12 and lowest kurtosis (-1.42). This flat distribution confirmed the MLP’s robustness in handling diverse inputs. Its performance remained consistent thanks to activation functions and hidden layers.</p>
+<p><strong>Conclusion:</strong> All models exhibited strong generalization with synthetic data. Slight skewness didn’t hinder performance, and low kurtosis confirmed low risk of outliers impacting model training.</p>
+<!-- Difference Between Perceptron and Regression:
+Perceptron:
+- Binary classification model.
+- Uses a step function (activation) to decide classes.
+- Weight updates driven by misclassification (error-based learning).
+
+Regression:
+- Predicts continuous outcomes.
+- Uses least squares minimization or similar loss functions.
+- No activation function — output is direct numerical value.
+
+Key takeaway: Perceptron classifies; regression predicts a continuous value.
+-->
+
+        <p><strong>Task A:</strong> Skewness (0.28) indicated slight right skew. Kurtosis (-1.26) suggested a flat, wide distribution. Perceptron maintained stable convergence.</p>
+        <p><strong>Task B:</strong> Perceptron AND logic had near-zero skew (0.23) and flat kurtosis (-1.08). Well-suited for linear decision boundaries.</p>
+        <p><strong>Task C:</strong> Multi-layer perceptron showed balanced data input (skew: 0.12). The model benefitted from deeper structure and activation functions.</p>
+        <p><strong>Additional:</strong> All tasks used a population of 20 random values between -100 and +100. Results showed consistency in model behavior across scenarios.</p>
+        <!-- Difference Between Perceptron and Regression:
+        Perceptron:
+        - Binary classification model.
+        - Uses a step function (activation) to decide classes.
+        - Weight updates driven by misclassification (error-based learning).
+
+        Regression:
+        - Predicts continuous outcomes.
+        - Uses least squares minimization or similar loss functions.
+        - No activation function — output is direct numerical value.
+
+        Key takeaway: Perceptron classifies; regression predicts a continuous value.
+        -->
+
+        
+<h3> Reflection</h3>
+<p><strong>What?</strong> We implemented and trained both simple and multi-layer perceptrons, incorporating synthetic and real data. Preprocessing steps like encoding and visual analysis were also covered.</p>
+<p><strong>So What?</strong> This unit reinforced critical neural network concepts such as weight updates, linear separability, and hidden layer structure. Visualization and statistical analysis helped interpret input distributions.</p>
+<p><strong>What Next?</strong> These learnings will support the development of more complex classifiers in later modules or industry projects.</p>
+<p><strong>Key Concept – Perceptron vs Regression:</strong> While regression estimates continuous values based on trends, perceptrons are designed to classify inputs into categories. Perceptrons use an activation function and are influenced by misclassification, whereas regressions optimize a loss function without classification boundaries.</p>
+
+        <p><strong>What?</strong> We implemented and trained simple and multi-layer Perceptrons and learned how to prepare data effectively.</p>
+        <p><strong>So What?</strong> This practice deepened understanding of how neural network models process data, how input encoding affects performance, and the significance of learning rates and iteration settings.</p>
+        <p><strong>What Next?</strong> These insights are directly applicable to more complex classification problems, and provide a strong foundation for neural network modeling in areas such as fraud detection, credit scoring, and risk analytics.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
