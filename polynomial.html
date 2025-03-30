@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Polynomial Regression | Unit 3</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section class="inner">
+        <header class="major">
+          <h1>Polynomial Regression: CO₂ vs Engine Volume</h1>
+        </header>
+
+        <p>This notebook investigates a nonlinear relationship between engine size and CO₂ emissions using polynomial regression.</p>
+
+        <h3>🔗 Access</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Polynomial_Regression.ipynb" target="_blank">📥 Download/View Notebook (.ipynb)</a>
+          </li>
+          <li>
+            <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit3_Polynomial_Regression.ipynb" target="_blank">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+            </a>
+          </li>
+        </ul>
+
+        <h3>📄 Description</h3>
+        <p>The goal of this task is to fit a polynomial model (degree 2) between <code>Engine Volume</code> and <code>CO₂ emissions</code> using the cars.csv dataset. This allows the model to capture nonlinear curvature in the relationship that linear regression could not.</p>
+
+        <h3> Code Snapshot</h3>
+<pre><code># Transform to polynomial features
+from sklearn.preprocessing import PolynomialFeatures
+
+poly = PolynomialFeatures(degree=2)
+X_poly = poly.fit_transform(X_train)
+
+# Fit the regression model
+model = LinearRegression()
+model.fit(X_poly, y_train)
+
+# Predict and evaluate
+y_pred = model.predict(poly.transform(X_test))
+print("R² Score:", r2_score(y_test, y_pred))
+</code></pre>
+
+        <h3> Results</h3>
+
+<p>The polynomial regression model (degree 2) demonstrated a significantly improved fit compared to the linear model, especially in capturing curvature in the relationship between <code>Engine Volume</code> and <code>CO₂ Emissions</code>.</p>
+
+<ul>
+  <li><strong>R² Score:</strong> Achieved values typically between <code>0.65</code> and <code>0.75</code>, depending on the train/test split. This indicates a stronger ability to explain variance in the data.</li>
+  <li><strong>Model Fit:</strong> The regression curve closely tracked the actual emission patterns, particularly for small to mid-sized engines. The linear model previously underfitted this area.</li>
+  <li><strong>Residuals:</strong> Visual inspection showed more uniformly distributed residuals, suggesting the polynomial model better captured systematic variance.</li>
+  <li><strong>Variance:</strong> At higher engine volumes, CO₂ emissions varied more widely, which the polynomial model was able to follow more flexibly than a straight line.</li>
+</ul>
+
+<p><strong>Key Takeaway:</strong> The polynomial regression captured a non-linear trend that a linear model could not. This makes it especially useful for datasets where the relationship between features and target is not strictly linear.</p>
+
+<p>An increased polynomial degree can lead to <em>overfitting</em> — where the model fits the training data very well but generalizes poorly to new data.</p>
+
+        <h3> Reflection</h3>
+        <p><strong>What?</strong> Applied polynomial regression to better capture non-linear behavior between variables.</p>
+        <p><strong>So What?</strong> This method outperformed linear regression for engine volume prediction and visually demonstrated the limits of linear modeling.</p>
+        <p><strong>What Next?</strong> Experiment with higher-degree polynomials and regularization (e.g. Ridge/Lasso) to fine-tune performance and avoid overfitting.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
