@@ -1,0 +1,58 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Unit 5: Jaccard Coefficient | Pavlos Papachristos</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section class="inner">
+        <header class="major">
+          <h1>Unit 5: Jaccard Coefficient - Patient Similarity</h1>
+        </header>
+
+        <p>This task involved calculating the <strong>Jaccard similarity coefficient</strong> to compare patients' binary medical test data. Values such as <code>Y</code> and <code>P</code> were treated as 1 (positive), while <code>N</code> and <code>A</code> were treated as 0 (negative).</p>
+
+        <h3>🔗 Access the Code</h3>
+        <ul>
+          <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/unit5_jaccard_similarity.ipynb" target="_blank"> Download/View Notebook (.ipynb)</a></li>
+          <li><a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/unit5_jaccard_similarity.ipynb" target="_blank">
+            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+          </a></li>
+        </ul>
+
+        <h3>📄 Description</h3>
+        <p>We were provided a small dataset of three patients with mixed categorical test results. The task involved converting all test values to binary form and calculating pairwise Jaccard similarity:</p>
+        <pre>
+Y & P → 1
+N & A → 0
+        </pre>
+
+        <h3>✅ Jaccard Results</h3>
+        <ul>
+          <li><strong>Jack & Mary:</strong> 0.33</li>
+          <li><strong>Jack & Jim:</strong> 0.67</li>
+          <li><strong>Jim & Mary:</strong> 0.75</li>
+        </ul>
+
+        <h3>🧠 Reflection</h3>
+        <p><strong>What?</strong> The Jaccard coefficient effectively identifies the degree of similarity between patient profiles using binary values for categorical data.</p>
+        <p><strong>So What?</strong> This method is useful in clustering, recommendation systems, or medical grouping where overlap in features is more important than differences.</p>
+        <p><strong>What Next?</strong> This method could be extended to larger datasets or incorporated into patient similarity models in medical AI systems.</p>
+
+      </section>
+    </div>
+  </div>
+</body>
+</html>
