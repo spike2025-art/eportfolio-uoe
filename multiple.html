@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Multiple Linear Regression | Unit 3</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section class="inner">
+        <header class="major">
+          <h1>Multiple Linear Regression: Predicting CO₂ Emissions</h1>
+        </header>
+
+        <p>This notebook explores how multiple predictors (e.g., engine volume, cylinders, fuel consumption) influence CO₂ emissions using the <code>cars.csv</code> dataset.</p>
+
+        <h3> Access</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Multiple_Linear_Regression.ipynb" target="_blank">📥 Download/View Notebook (.ipynb)</a>
+          </li>
+          <li>
+            <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit3_Multiple_Linear_Regression.ipynb" target="_blank">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+            </a>
+          </li>
+        </ul>
+
+        <h3>📄 Description</h3>
+        <p>Using multiple regression, this notebook fits a model using several input features:</p>
+        <ul>
+          <li><code>Volume</code> – Engine size</li>
+          <li><code>Cylinders</code></li>
+          <li><code>Fuel Consumption (Comb.)</code></li>
+        </ul>
+        <p>The goal is to see how these features collectively impact <code>CO₂</code> emissions and to analyze their individual contributions.</p>
+
+        <h3> Code Snapshot</h3>
+<pre><code>import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
+
+df = pd.read_csv("cars.csv")
+X = df[['Volume', 'Cylinders', 'Fuel Consumption Comb (mpg)']]
+y = df['CO2']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+print("Intercept:", model.intercept_)
+print("Coefficients:", dict(zip(X.columns, model.coef_)))
+print("R² Score:", r2_score(y_test, model.predict(X_test)))
+</code></pre>
+
+        <h3> Results</h3>
+        <ul>
+          <li>All three variables showed significant influence on CO₂ emissions.</li>
+          <li>The R² score improved over simple linear regression (e.g. ~0.65), showing better explanatory power.</li>
+          <li>Negative coefficient for <code>Fuel Consumption (mpg)</code> aligns with expectations — higher mpg means lower emissions.</li>
+        </ul>
+
+        <h3> Reflection</h3>
+        <p><strong>What?</strong> I explored the combined impact of engine and fuel features on emission predictions.</p>
+        <p><strong>So What?</strong> Multiple regression improves predictive performance and better reflects real-world interactions.</p>
+        <p><strong>What Next?</strong> I will extend the model with categorical encoding (e.g. Fuel Type), and explore regularization techniques for even stronger generalization.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
