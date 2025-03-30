@@ -61,8 +61,18 @@ plt.title("Linear Regression: Engine Size vs CO2")
 plt.show()
 </code></pre>
 
-        <h3> Results</h3>
-        <p>The model shows a clear linear relationship: higher engine size tends to produce higher CO₂ emissions. The regression line fits the data well, with minimal outliers.</p>
+       <h3> Results</h3>
+<p>The linear regression model shows a <strong>moderate linear relationship</strong> between engine volume and CO₂ emissions.</p>
+
+<ul>
+  <li>The slope is rather small but consistent (~0.01), indicating that as engine volume increases, CO₂ emissions increase proportionally.</li>
+  <li>The R² values ranged between <strong>0.25 and 0.38</strong> across different test splits, which suggests that the model captures some, but not all, of the variation in emissions.</li>
+  <li>As expected, increasing the test size slightly reduced model performance due to fewer training points.</li>
+  <li>Higher Mean Squared Error (MSE) values on larger test sets showed that prediction error grows with more unseen data.</li>
+</ul>
+
+<p>This sensitivity analysis confirmed that the model is <strong>data-dependent</strong> and performs best when the training set is sufficiently large and well distributed.</p>
+<p>Visual inspection of the regression line and actual data points further confirms the trend, though some variance remains unexplained — possibly due to missing features such as vehicle weight, fuel type, or transmission.</p>
 
         <h3> Reflection</h3>
         <p><strong>What?</strong> This task demonstrated how to implement and visualize a basic linear regression model on real-world data.</p>
