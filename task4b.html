@@ -26,17 +26,14 @@
           <li><a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/task4b_regression.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a></li>
         </ul>
 
+        
         <h3>Results</h3>
-<p>The Pearson correlation coefficient quantifies the strength of the linear relationship between population and GDP per capita. A strong or weak relationship can be visually interpreted via the plotted scatter diagram.</p>
-
 <ul>
-  <li>The Pearson Correlation Coefficient was calculated to be approximately <strong>0.62</strong>, suggesting a <strong>moderate positive correlation</strong> between a country's average population and its average GDP per capita (2001–2020).</li>
-  <li>While there is a positive trend, the strength of the correlation is not strong. This indicates that while population size may influence GDP per capita, it is not the only or dominant factor.</li>
-  <li>The scatter plot reveals that countries with smaller populations tend to have a wider spread of GDP per capita, including some very high-income nations (e.g., Luxembourg, Norway), while heavily populated countries tend to cluster in the mid-to-low GDP range.</li>
-  <li>The result highlights the importance of considering additional factors such as industrialization, economic policy, education, and governance when interpreting development metrics.</li>
+  <li>The linear regression model resulted in a coefficient (slope) of approximately <strong>0.000017</strong> and an intercept around <strong>10,514</strong>, indicating that for each additional person in a country's population, the GDP per capita increases slightly—although the effect is minimal.</li>
+  <li>The model's <strong>R² score was ~0.38</strong>, suggesting that the linear model explains around 38% of the variance in GDP per capita based on population. This indicates that the model has <strong>limited explanatory power</strong> and is likely underfitting the data.</li>
+  <li>The scatter plot with the regression line shows a wide dispersion of data points around the regression line, reinforcing that the linear relationship is weak.</li>
+  <li>This result emphasizes that while population is a relevant feature, it should not be used in isolation to predict GDP per capita. Incorporating additional variables—such as education level, resource availability, and government expenditure—would enhance the model.</li>
 </ul>
-
-<img src="Unit04_regression_plot_clean_final.png" alt="Correlation Plot" style="max-width:100%; height:auto;">
 
 
         <h3>Reflection</h3>
