@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Linear Regression | Unit 3</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section class="inner">
+        <header class="major">
+          <h1>Linear Regression with cars.csv</h1>
+        </header>
+
+        <p>This notebook explores how a simple linear regression model predicts car CO₂ emissions based on engine size using the <code>cars.csv</code> dataset.</p>
+
+        <h3>🔗 Access</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit3_Linear_Regression.ipynb" target="_blank">📥 Download/View Notebook (.ipynb)</a>
+          </li>
+          <li>
+            <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit3_Linear_Regression.ipynb" target="_blank">
+              <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+            </a>
+          </li>
+        </ul>
+
+        <h3>📄 Description</h3>
+        <p>The code loads <code>cars.csv</code>, selects <code>Engine Size</code> as the independent variable and <code>CO2 Emissions</code> as the dependent variable, and fits a linear regression model using scikit-learn. A scatter plot with regression line is displayed.</p>
+
+        <h3>🧪 Code Snapshot</h3>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+df = pd.read_csv("cars.csv")
+X = df[['Engine Size']]
+y = df['CO2 Emissions']
+
+model = LinearRegression()
+model.fit(X, y)
+
+print("Intercept:", model.intercept_)
+print("Slope:", model.coef_[0])
+
+plt.scatter(X, y)
+plt.plot(X, model.predict(X), color='red')
+plt.xlabel("Engine Size")
+plt.ylabel("CO2 Emissions")
+plt.title("Linear Regression: Engine Size vs CO2")
+plt.show()
+</code></pre>
+
+        <h3>📊 Results</h3>
+        <p>The model shows a clear linear relationship: higher engine size tends to produce higher CO₂ emissions. The regression line fits the data well, with minimal outliers.</p>
+
+        <h3>🧠 Reflection</h3>
+        <p><strong>What?</strong> This task demonstrated how to implement and visualize a basic linear regression model on real-world data.</p>
+        <p><strong>So What?</strong> It highlighted the value of plotting regression lines and checking for linear assumptions before applying more complex models.</p>
+        <p><strong>What Next?</strong> I plan to experiment with adding more features (e.g., fuel type, transmission) and extend this into multiple regression.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
