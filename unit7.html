@@ -64,11 +64,25 @@
 
         
 <h3> Results</h3>
-<p><strong>Approach:</strong> For each task, a synthetic dataset of 20 random values ranging from -100 to +100 was generated. This allowed us to simulate a wide range of input scenarios, providing insight into how each perceptron model processes different distributions.</p>
-<p><strong>Task A – Simple Perceptron:</strong> The dataset had a mean near -8.46, with a positive skew (0.28) and a flat distribution (kurtosis: -1.26). This shows the data was slightly right-leaning and uniformly spread, indicating the perceptron’s stability even in less centered data distributions.</p>
-<p><strong>Task B – Perceptron AND Operator:</strong> The distribution was close to symmetric (skew: 0.23) with similarly low kurtosis (-1.08), demonstrating that even logical operations maintain reliable performance under varying inputs, especially in linearly separable tasks.</p>
-<p><strong>Task C – Multi-layer Perceptron:</strong> The most balanced input with skewness near 0.12 and lowest kurtosis (-1.42). This flat distribution confirmed the MLP’s robustness in handling diverse inputs. Its performance remained consistent thanks to activation functions and hidden layers.</p>
-<p><strong>Conclusion:</strong> All models exhibited strong generalization with synthetic data. Slight skewness didn’t hinder performance, and low kurtosis confirmed low risk of outliers impacting model training.</p>
+
+<h4> a) Simple Perceptron</h4>
+<p><strong>Method:</strong> We trained a simple Perceptron on a dataset of 100 synthetic binary input pairs, where the target label followed an AND-like logic (output is 1 only if both inputs are 1). The dataset was split into training and test sets.</p>
+<p><strong>Results:</strong> The perceptron learned to separate the classes with a high degree of accuracy. The test set confirmed the model’s ability to draw a linear decision boundary between the classes.</p>
+<p><strong>Interpretation:</strong> This shows that a single-layer perceptron can successfully solve linearly separable problems by learning from labeled data through iterative weight updates.</p>
+
+  
+
+<h4> b) Perceptron AND Operator</h4>
+<p><strong>Method:</strong> A Perceptron was trained using repeated AND gate logic (inputs repeated 25 times). This ensured balanced exposure to all binary input combinations for a linearly separable classification task.</p>
+<p><strong>Results:</strong> The perceptron achieved perfect classification on the repeated AND dataset. The model’s weights stabilized quickly and produced consistent predictions.</p>
+<p><strong>Interpretation:</strong> This reinforces the strength of perceptrons in solving simple logic problems that are linearly separable. The experiment also highlighted how data repetition aids model generalization.</p>
+
+
+<h4> c) Multi-layer Perceptron (MLP)</h4>
+<p><strong>Method:</strong> An MLP was trained on an XOR dataset (non-linearly separable). A single hidden layer with ReLU activation was used. Data was expanded to 100 examples to ensure robust training.</p>
+<p><strong>Results:</strong> The MLP reached perfect accuracy on the XOR task. The hidden layer enabled it to model complex decision boundaries that a simple perceptron cannot learn.</p>
+<p><strong>Interpretation:</strong> This experiment demonstrates how MLPs overcome the limitation of linear separability, making them suitable for real-world, complex classification tasks where simple decision surfaces aren't sufficient.</p>
+
 <!-- Difference Between Perceptron and Regression:
 Perceptron:
 - Binary classification model.
