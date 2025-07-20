@@ -1,0 +1,2068 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/owner/ontologies/2025/5/untitled-ontology-6/"
+     xml:base="http://www.semanticweb.org/owner/ontologies/2025/5/untitled-ontology-6/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontology="http://www.jobmatcher.org/ontology#">
+    <owl:Ontology rdf:about="http://www.jobmatcher.org/ontology#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#appliesTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#appliesTo">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#hasApplicant"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasApplicant -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#hasApplicant">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasEducationBackground -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#hasEducationBackground">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#isEducationOf"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#EducationExperience"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasEmploymentCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#hasEmploymentCondition">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#isConditionOf"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasLocationPreference -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#hasLocationPreference">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#isPreferredBy"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasSector -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#hasSector">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasSkill -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#hasSkill">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#isSkillof"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasWorkExperience -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#hasWorkExperience">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#isExperienceOf"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#isConditionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#isConditionOf">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#isEducationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#isEducationOf"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#isExperienceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#isExperienceOf">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#isPreferredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#isPreferredBy">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#isRequiredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#isRequiredBy">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#isSkillof -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#isSkillof">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#offeredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#offeredBy">
+        <owl:inverseOf rdf:resource="http://www.jobmatcher.org/ontology#offersJob"/>
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#offersJob -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#offersJob">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#requiresSkill -->
+
+    <owl:ObjectProperty rdf:about="http://www.jobmatcher.org/ontology#requiresSkill">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+        <rdfs:range rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.jobmatcher.org/ontology#hasAge">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasContractLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.jobmatcher.org/ontology#hasContractLength">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#PartTimeContract"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasExperienceDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.jobmatcher.org/ontology#hasExperienceDuration">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.jobmatcher.org/ontology#hasName">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#hasPreferredSalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.jobmatcher.org/ontology#hasPreferredSalary">
+        <rdfs:domain rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#AcademicWritingSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#AcademicWritingSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#AdministrativeJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#AdministrativeJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#CommunicationSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#TimeManagementSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Athens -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Athens">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#NearShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#BachelorDegree -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#BachelorDegree">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#BankTreasuryJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#BankTreasuryJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#FinanceJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#BaristerJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#BaristerJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#QualifiedBaristerSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#LegalJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Belfast -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Belfast">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#OnShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Birmingham -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Birmingham">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#OnShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Budapest -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Budapest">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#NearShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CarIndustry -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#CarIndustry">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Charity -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Charity">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ClassroomManagementSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ClassroomManagementSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+        <owl:disjointWith rdf:resource="http://www.jobmatcher.org/ontology#ResearchSkill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CommoditiesTraderJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#CommoditiesTraderJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#FinanceJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CommunicationSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#CommunicationSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Company -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Company"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ComputingSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ComputingSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ConflictResolutionSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ConflictResolutionSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ContractDraftingSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ContractDraftingSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CustomerAccountAdministratorJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#CustomerAccountAdministratorJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#CustomerServiceJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CustomerServiceJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#CustomerServiceJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#CommunicationSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ConflictResolutionSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#DataScientist -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#DataScientist">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#PhD"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#TechnicalJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Defence -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Defence">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#EducationExperience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#EducationExperience">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Experience"/>
+        <owl:disjointWith rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#EducationJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#EducationJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#EducationRequirement -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#EducationRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#EmploymentCondition -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#EquitiesTradingJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#EquitiesTradingJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#FinanceJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Experience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Experience"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ExperienceRequirement -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ExperienceRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Finance -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Finance">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FinanceJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#FinanceJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FinancialAnalysisSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FinancialRiskManagementJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#FinancialRiskManagementJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#FinanceJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FreelanceExperience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#FreelanceExperience">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FullTime -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#FullTime">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkTypePreference"/>
+        <owl:disjointWith rdf:resource="http://www.jobmatcher.org/ontology#PartTime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FullTimeContract -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#FullTimeContract">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#FullTime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FullTimeExperience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#FullTimeExperience">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#GeneralPractionerJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#GeneralPractionerJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#HealthcareJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#GovernmentAgency -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#GovernmentAgency">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#HasRelativeInCompany -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#HasRelativeInCompany">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#RelativeInCompany"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#HealthcareJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#HealthcareJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#HichSchoolTeacherJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#HichSchoolTeacherJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationJob"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ClassroomManagementSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#SubjectSpecialisationSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#TeachingSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#HighSchoolDiploma -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#HighSchoolDiploma">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#HighSchoolTeacherAssistantJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#HighSchoolTeacherAssistantJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationJob"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ClassroomManagementSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#TeachingSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#InsuranceActuaryJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#InsuranceActuaryJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#QualifiedActuarySkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#FinanceJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#InternshipExperience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#InternshipExperience">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Job -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Job"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Jobseeker -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Jobseeker"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#LegalJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#LegalJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#LegalSecretaryJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#LegalSecretaryJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#CommunicationSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#QualifiedSolicitorSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#LegalJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Location -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Location">
+        <owl:disjointWith rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#LocationPreference -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#LocationPreference">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Preference"/>
+        <owl:disjointWith rdf:resource="http://www.jobmatcher.org/ontology#WorkTypePreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#London -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#London">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#OnShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ManagerialJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ManagerialJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#MasterDegree -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#MasterDegree">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Mining -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Mining">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Multinational -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Multinational">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Mumbai -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Mumbai">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#OffShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NearShore -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NearShore">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NeedWorkPermit -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NeedWorkPermit">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkPermitRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NeedsSponsorship -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NeedsSponsorship">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#SponsorshipRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NetworkAdministrator -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NetworkAdministrator">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#BachelorDegree"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#TechnicalJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NeverWorkedHere -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NeverWorkedHere">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#PreviousEmploymentWithCompany"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NeverWorkedWithAuditor -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NeverWorkedWithAuditor">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkedWithAuditor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NoFormalEducation -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NoFormalEducation">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NoRelativesInCompany -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NoRelativesInCompany">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#RelativeInCompany"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NoSponsorshipNeeded -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NoSponsorshipNeeded">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#SponsorshipRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NoWorkPermitNeeded -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NoWorkPermitNeeded">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkPermitRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NonProfit -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NonProfit">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NurseJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#NurseJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#HealthcareJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#OffShore -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#OffShore">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#OnShore -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#OnShore">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#OperationsManager -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#OperationsManager">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#CommunicationSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ConflictResolutionSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#ManagerialJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PartTime -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PartTime">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkTypePreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PartTimeContract -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PartTimeContract">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#PartTime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PartTimeExperience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PartTimeExperience">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PermanentFullTime -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PermanentFullTime">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#FullTime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PermanentPartTime -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PermanentPartTime">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#PartTime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PersonnalAssistanceJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PersonnalAssistanceJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#AdministrativeJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PhD -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PhD">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Preference -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Preference"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PreviousEmploymentWithCompany -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PreviousEmploymentWithCompany">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PrimarySchoolTeacherJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PrimarySchoolTeacherJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationJob"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#TeachingSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PrivateLimitedCompany -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PrivateLimitedCompany">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ProjectAdministratorSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ProjectManager -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ProjectManager">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#ManagerialJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PublicLimitedCompany -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PublicLimitedCompany">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PublicServices -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#PublicServices">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#QualifiedActuarySkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#QualifiedActuarySkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#QualifiedBaristerSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#QualifiedBaristerSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#QualifiedSolicitorSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#QualifiedSolicitorSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#RelativeInCompany -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#RelativeInCompany">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Requirement -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Requirement"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ResearchSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#ResearchSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Retail -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Retail">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SalaryPreference -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#SalaryPreference">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Preference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Sector -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Sector"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Singapore -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Singapore">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#OffShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Skill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Skill"/>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SoftwareEngineer -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#SoftwareEngineer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#TechnicalJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SolicitorJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#SolicitorJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#QualifiedSolicitorSkill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#LegalJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SponsorshipRequirement -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#SponsorshipRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Startup -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Startup">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SubjectSpecialisationSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#SubjectSpecialisationSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SurgeonJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#SurgeonJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#HealthcareJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Tampa -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Tampa">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#OffShore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#TeachingSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#TeachingSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#TechnicalJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#TechnicalJob">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Job"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Telecommunications -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#Telecommunications">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Sector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#TimeManagementSkill -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#TimeManagementSkill">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#UniversityLecturerJob -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#UniversityLecturerJob">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.jobmatcher.org/ontology#PhD"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EducationJob"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#AcademicWritingSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#ResearchSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.jobmatcher.org/ontology#requiresSkill"/>
+                <owl:someValuesFrom rdf:resource="http://www.jobmatcher.org/ontology#TeachingSkill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#VolunteeringExperience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#VolunteeringExperience">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#WorkExperience -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#WorkExperience">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Experience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#WorkPermitRequirement -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#WorkPermitRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#WorkTypePreference -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#WorkTypePreference">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#Preference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#WorkedHereBefore -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#WorkedHereBefore">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#PreviousEmploymentWithCompany"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#WorkedWithAuditor -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#WorkedWithAuditor">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#EmploymentCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#YesWorkedWithAuditor -->
+
+    <owl:Class rdf:about="http://www.jobmatcher.org/ontology#YesWorkedWithAuditor">
+        <rdfs:subClassOf rdf:resource="http://www.jobmatcher.org/ontology#WorkedWithAuditor"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#AcademicWritingSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#AcademicWritingSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#AcademicWritingSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Aisha_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Aisha_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#NeedsSponsorship_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#Mumbai_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#VBSkill"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#PartTimeExperience_Ind"/>
+        <ontology:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22</ontology:hasAge>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ontology:hasExperienceDuration>
+        <ontology:hasName>Aisha</ontology:hasName>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Alex_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Alex_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#PhD_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#Athens_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#PythonSkill"/>
+        <ontology:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">26</ontology:hasAge>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ontology:hasExperienceDuration>
+        <ontology:hasName>Alex</ontology:hasName>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Ali_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Ali_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#NeedsSponsorship_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#Tampa_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#PythonSkill"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#FreelanceExp_Ind"/>
+        <ontology:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ontology:hasAge>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</ontology:hasExperienceDuration>
+        <ontology:hasName>Ali</ontology:hasName>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#AmerFin_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#AmerFin_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Multinational"/>
+        <ontology:hasSector rdf:resource="http://www.jobmatcher.org/ontology#FinanceSector_Ind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Athens_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Athens_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Athens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#BachelorDegree_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#BachelorDegree_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#BachelorDegree"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Belfast_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Belfast_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Belfast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Birmingham_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Birmingham_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Birmingham"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Budapest_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Budapest_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Budapest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CRMSoftwareSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#CRMSoftwareSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ClassroomManagementSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ClassroomManagementSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CommodotitiesTraderJob_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#CommodotitiesTraderJob_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#CommoditiesTraderJob"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill_Ind"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree_Ind"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#PythonSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#CommunicationSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#CommunicationSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#CommunicationSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ComputingSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ComputingSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ConflictResolutionSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ConflictResolutionSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#ConflictResolutionSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ContractDraftingSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ContractDraftingSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#ContractDraftingSkill"/>
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#LegalJob"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#DataScientist_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#DataScientist_Ind">
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#PythonSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#David_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#David_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#HighSchoolDiploma_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#HasRelativeInCompany_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#Birmingham_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill_Ind"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#PartTimeExperience_Ind"/>
+        <ontology:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</ontology:hasAge>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.2</ontology:hasExperienceDuration>
+        <ontology:hasName>David</ontology:hasName>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#DiagnosisSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#DiagnosisSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#EquitiesTradingJob_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#EquitiesTradingJob_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#EquitiesTradingJob"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill_Ind"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#JavaSkill_Ind"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree_Ind"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#PythonSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FinanceSector_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#FinanceSector_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Finance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FinancialAnalysisSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#FinancialAnalysisSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FreelanceExp_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#FreelanceExp_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#FreelanceExperience"/>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5</ontology:hasExperienceDuration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#FullTimeExperiance_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#FullTimeExperiance_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7</ontology:hasExperienceDuration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#HasRelativeInCompany_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#HasRelativeInCompany_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#HasRelativeInCompany"/>
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#RelativeInCompany"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#HighSchoolDiploma_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#HighSchoolDiploma_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#HighSchoolDiploma"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Internship_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Internship_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">.5</ontology:hasExperienceDuration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#JavaSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#JavaSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#LegalResearchSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#LegalResearchSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Liam_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Liam_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#HighSchoolDiploma_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#NeedsWorkPermit_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#Belfast_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#VBSkill"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#Internship_Ind"/>
+        <ontology:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22</ontology:hasAge>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ontology:hasExperienceDuration>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#LitigationSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#LitigationSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#London_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#London_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#London"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Maria_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Maria_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#BachelorDegree_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#NeedsWorkPermit_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#London_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#CommunicationSkill_Ind"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#FullTimeExperiance_Ind"/>
+        <ontology:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">39</ontology:hasAge>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</ontology:hasExperienceDuration>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#MarketAnalysisSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#MarketAnalysisSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#MasterDegreeRequirement -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#MasterDegreeRequirement">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#EducationRequirement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#MasterDegree_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#MasterDegree_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#EducationExperience"/>
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#MoreThan1YearExperience -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#MoreThan1YearExperience">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#ExperienceRequirement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Mumbai_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Mumbai_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Mumbai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NeedsSponsorship_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#NeedsSponsorship_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#NeedsSponsorship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NeedsWorkPermit_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#NeedsWorkPermit_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#NeedWorkPermit"/>
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#WorkPermitRequirement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NetworkingSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#NetworkingSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#NoFormalEducation_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#NoFormalEducation_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#NoFormalEducation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PartTimeExperience_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#PartTimeExperience_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</ontology:hasExperienceDuration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PatientCareSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#PatientCareSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Paul -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Paul">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#HasRelativeInCompany_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#WorkedWithAuditor_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#London_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#QualifiedActuarySkill_Ind"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#FreelanceExp_Ind"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#FullTimeExperiance_Ind"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#VolunteeringExperiance_Ind"/>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</ontology:hasExperienceDuration>
+        <ontology:hasName>Paul</ontology:hasName>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PhD_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#PhD_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#PhD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ProjectAdministratorSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ProjectAdministratorSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#ProjectAdministratorSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ProjectManager_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ProjectManager_Ind">
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#ProjectPlanningSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ProjectPlanningSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ProjectPlanningSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#PythonSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#PythonSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#ComputingSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#QualifiedActuarySkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#QualifiedActuarySkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#QualifiedBarristerSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#QualifiedBarristerSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#QualifiedBaristerSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#QualifiedSolicitor_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#QualifiedSolicitor_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#QualifiedSolicitorSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#ResearchSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#ResearchSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SchedulingSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#SchedulingSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Singapore_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Singapore_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Singapore"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SoftwareEngineer_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#SoftwareEngineer_Ind">
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#JavaSkill_Ind"/>
+        <ontology:requiresSkill rdf:resource="http://www.jobmatcher.org/ontology#PythonSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Sophie_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Sophie_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Jobseeker"/>
+        <ontology:hasEducationBackground rdf:resource="http://www.jobmatcher.org/ontology#MasterDegree_Ind"/>
+        <ontology:hasEmploymentCondition rdf:resource="http://www.jobmatcher.org/ontology#NeedsSponsorship_Ind"/>
+        <ontology:hasLocationPreference rdf:resource="http://www.jobmatcher.org/ontology#Tampa_Ind"/>
+        <ontology:hasSkill rdf:resource="http://www.jobmatcher.org/ontology#PythonSkill"/>
+        <ontology:hasWorkExperience rdf:resource="http://www.jobmatcher.org/ontology#FreelanceExp_Ind"/>
+        <ontology:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28</ontology:hasAge>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ontology:hasExperienceDuration>
+        <ontology:hasName>Sophie</ontology:hasName>
+        <ontology:hasPreferredSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45000</ontology:hasPreferredSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SubjectSpecialisationSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#SubjectSpecialisationSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#SurgicalSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#SurgicalSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#Tampa_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#Tampa_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Tampa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#TeachingSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#TeachingSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#TimeManagementSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#TimeManagementSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#TimeManagementSkill_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#TimeManagementSkill_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#TimeManagementSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#TroubleshootingSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#TroubleshootingSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#VBSkill -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#VBSkill">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#ComputingSkill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#VolunteeringExperiance_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#VolunteeringExperiance_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#WorkExperience"/>
+        <ontology:hasExperienceDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.5</ontology:hasExperienceDuration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.jobmatcher.org/ontology#WorkedWithAuditor_Ind -->
+
+    <owl:NamedIndividual rdf:about="http://www.jobmatcher.org/ontology#WorkedWithAuditor_Ind">
+        <rdf:type rdf:resource="http://www.jobmatcher.org/ontology#YesWorkedWithAuditor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.jobmatcher.org/ontology#LocationPreference"/>
+            <rdf:Description rdf:about="http://www.jobmatcher.org/ontology#SalaryPreference"/>
+            <rdf:Description rdf:about="http://www.jobmatcher.org/ontology#WorkTypePreference"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
