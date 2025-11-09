@@ -1,728 +1,747 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Pavlos Papachristos | MSc AI Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<head>
+  <title>Pavlos Papachristos | MSc AI Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-/* Fix for long titles */
-header.major h3 {
-    font-size: 1.5em;
-    line-height: 1.3;
-    margin-bottom: 1em;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-header.major p {
-    margin-bottom: 1.5em;
-}
-</style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
+    /* Header Section */
+    .header {
+      text-align: center;
+      color: white;
+      padding: 60px 20px;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .header p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* Module Cards */
+    .modules-container {
+      display: grid;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .module-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    /* MODULE 3 - PROFESSIONAL NAVY */
+    .module-card.module-3 .module-header {
+      background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    }
+
+    .module-card.module-3 .module-header:hover {
+      background: linear-gradient(135deg, #0d1642 0%, #2c3a8f 100%);
+    }
+
+    .module-card.module-3 .unit-item {
+      border-left: 4px solid #1a237e;
+    }
+
+    .module-card.module-3 .unit-links a {
+      color: #1a237e;
+      border-color: #1a237e;
+    }
+
+    .module-card.module-3 .unit-links a:hover {
+      background: #1a237e;
+      color: white;
+    }
+
+    /* MODULE 4 - PROFESSIONAL SLATE */
+    .module-card.module-4 .module-header {
+      background: linear-gradient(135deg, #37474f 0%, #546e7a 100%);
+    }
+
+    .module-card.module-4 .module-header:hover {
+      background: linear-gradient(135deg, #263238 0%, #455a64 100%);
+    }
+
+    .module-card.module-4 .unit-item {
+      border-left: 4px solid #37474f;
+    }
+
+    .module-card.module-4 .unit-links a {
+      color: #37474f;
+      border-color: #37474f;
+    }
+
+    .module-card.module-4 .unit-links a:hover {
+      background: #37474f;
+      color: white;
+    }
+
+    /* MODULE 5 - PROFESSIONAL CHARCOAL TEAL */
+    .module-card.module-5 .module-header {
+      background: linear-gradient(135deg, #004d40 0%, #00695c 100%);
+    }
+
+    .module-card.module-5 .module-header:hover {
+      background: linear-gradient(135deg, #00332e 0%, #00574b 100%);
+    }
+
+    .module-card.module-5 .unit-item {
+      border-left: 4px solid #004d40;
+    }
+
+    .module-card.module-5 .unit-links a {
+      color: #004d40;
+      border-color: #004d40;
+    }
+
+    .module-card.module-5 .unit-links a:hover {
+      background: #004d40;
+      color: white;
+    }
+
+    /* MODULE 6 - PROFESSIONAL DARK AMBER */
+    .module-card.module-6 .module-header {
+      background: linear-gradient(135deg, #4e342e 0%, #6d4c41 100%);
+    }
+
+    .module-card.module-6 .module-header:hover {
+      background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%);
+    }
+
+    .module-card.module-6 .unit-item {
+      border-left: 4px solid #4e342e;
+    }
+
+    .module-card.module-6 .unit-links a {
+      color: #4e342e;
+      border-color: #4e342e;
+    }
+
+    .module-card.module-6 .unit-links a:hover {
+      background: #4e342e;
+      color: white;
+    }
+
+    /* General Styling */
+    .module-header {
+      color: white;
+      padding: 30px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .module-header h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .module-header .toggle-icon {
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+
+    .module-card.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .module-header p {
+      font-size: 1em;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
+
+    .module-meta {
+      display: flex;
+      gap: 20px;
+      margin-top: 15px;
+      font-size: 0.9em;
+      flex-wrap: wrap;
+    }
+
+    .module-meta span {
+      background: rgba(255,255,255,0.2);
+      padding: 5px 15px;
+      border-radius: 20px;
+    }
+
+    .units-container {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      background: #f8f9fa;
+    }
+
+    .module-card.active .units-container {
+      max-height: 15000px;
+    }
+
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .unit-item {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .unit-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    }
+
+    .unit-item h3 {
+      color: #333;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .unit-item p {
+      color: #666;
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .unit-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .unit-links a {
+      text-decoration: none;
+      font-size: 0.9em;
+      padding: 8px 12px;
+      border: 1px solid;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .unit-links a:hover {
+      color: white;
+    }
+
+    .contact-section {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .contact-item h3 {
+      color: #1a237e;
+      margin: 15px 0 10px 0;
+    }
+
+    .contact-item a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #1a237e;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2em;
+      }
+
+      .units-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .module-header h2 {
+        font-size: 1.4em;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
     
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
+    <div class="header fade-in">
+      <h1>Hello, I'm Pavlos Papachristos</h1>
+      <p>MSc Artificial Intelligence student at the University of Essex,<br />
+        with a background in risk management and a strong interest in data science, machine learning, and AI.</p>
+    </div>
 
-      <!-- Header -->
-      <header id="header" class="alt">
-        <a href="index.html" class="logo"><strong>Pavlos</strong> <span>e-Portfolio</span></a>
-        <nav>
-          <a href="#menu">Menu</a>
-        </nav>
-      </header>
+    <div class="modules-container">
 
-      <!-- Menu -->
-      <nav id="menu">
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-        </ul>
-      </nav>
-
-      <!-- Banner -->
-      <section id="banner" class="major">
-        <div class="inner">
-          <header class="major">
-            <h1>Hello, I’m Pavlos Papachristos</h1>
-          </header>
-          <div class="content">
-            <p>MSc Artificial Intelligence student at the University of Essex,<br />
-              with a background in risk management and a strong interest in data science, machine learning, and AI.</p>
-            
+      <!-- Module 3: Machine Learning -->
+      <div class="module-card module-3 fade-in" style="animation-delay: 0.1s">
+        <div class="module-header" onclick="toggleModule(this)">
+          <h2>
+            Module 3: Machine Learning
+            <span class="toggle-icon">▼</span>
+          </h2>
+          <p>Advanced machine learning techniques, neural networks, and practical implementations</p>
+          <div class="module-meta">
+            <span>📚 Machine Learning Units</span>
           </div>
         </div>
-      </section>
-
-     <!-- Main -->
-<div id="main">
-  <section id="one" class="tiles">
-
-    <!-- Module 3 - Machine Learning January 2025 Unit 3: Correlation & Regression-->
-    <article>
-      <span class="image">
-        <img src="images/pic03.jpg" alt="Unit 3" />
-      </span>
-      <header class="major">
-        <h3><a href="unit3.html" class="link"> Module 3 - Machine Learning January 2025 - Unit 3: Correlation & Regression</a></h3>
-        <p>Exploring correlation and regression using Python notebooks and dataset variations.</p>
-      </header>
-    </article>
-
-    
-
-    <!-- Module 3 - Unit 4 -->
-<article>
-  <span class="image">
-    <img src="images/pic04.jpg" alt="Unit 4" />
-  </span>
-  <header class="major">
-    <h3><a href="unit4.html" class="link"> Module 3 -Machine Learning January 2025 Unit 4: Seminar – Linear Regression with Scikit-Learn</a></h3>
-    <p>Explore correlation and regression between global population and GDP using Python and Colab notebooks.</p>
-  </header>
-</article>
-
-    <!-- Module 3 - Unit 5 -->
-    
-    <article>
-  <span class="image">
-    <img src="images/pic02.jpg" alt="Unit 5" />
-  </span>
-  <header class="major">
-    <h3>
-      <a href="unit5.html" class="link"> Module 3 - Machine Learning January 2025 Unit 5: Jaccard Coefficient Calculations</a>
-    </h3>
-    <p>Measure similarity between patient test profiles using Jaccard metrics.</p>
-  </header>
-</article>
-
-    
-<!-- NEW TILE:  Project Report -->
-    <!-- Module 3 - Unit 6 -->
-    <article>
-      <span class="image">
-        <img src="images/pic03.jpg" alt="Team Project" />
-      </span>
-      <header class="major">
-        <h3><a href="project.html" class="link"> Module 3 - Machine Learning January 2025 – Unit 6: Development Team Project</a></h3>
-        <p>Collaborative analysis of NYC Airbnb market using clustering and strategic insights.</p>
-      </header>
-    </article>
-    
-
-    <!-- Module 3 - Unit 7 -->
-    <article>
-  <span class="image">
-    <img src="images/pic04.jpg" alt="Unit 7" />
-  </span>
-  <header class="major">
-    <h3><a href="unit7.html" class="link"> Module 3 - Machine Learning January 2025 Unit 7: Perceptron Activities</a></h3>
-    <p>Simple & multi-layer perceptrons applied to cleaned datasets with visualizations.</p>
-  </header>
-</article>
-
-
-
-    <!-- Module 3 - Unit 8: Gradient Cost Function -->
-<article>
-  <span class="image">
-    <img src="images/pic08.jpg" alt="Unit 8" />
-  </span>
-  <header class="major">
-    <h3> Module 3 - Machine Learning January 2025 Unit 8: Gradient Cost Function</h3>
-    <p>Analysis of linear regression using gradient descent with Python visualization and metrics.</p>
-    <ul>
-      <li><a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/Unit08%20Ex4%20gradient_descent_cost_function(1).ipynb" target="_blank">View Python Code on GitHub</a></li>
-      <li><a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit08%20Ex4%20gradient_descent_cost_function(1).ipynb" target="_blank">Open in Google Colab</a></li>
-      <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Gradient_Descent_Analysis_Summary.docx" target="_blank">Download Summary Document (Word)</a></li>
-    </ul>
-  </header>
-</article>
-
-
-    
-<!-- Module 3 - Unit 9: Convolutional Neural Networks (Parametrised Examples) -->
-<article>
-  <span class="image">
-    <img src="images/pic09.jpg" alt="Unit 9" />
-  </span>
-  <header class="major">
-    <h3> Module 3 - Machine Learning January 2025 Unit 9: Convolutional Neural Networks (Parameterised Examples)</h3>
-    <p>Includes parametrised CNN use cases for the ePortfolio task, with downloadable code and summaries.</p>
-    <ul>
-      <li>
-        <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Unit09%20Ex1%20parametrised%20Convolutional%20Neural%20Networks%20(CNN)%20-%20Object%20Recognition(1).ipynb" target="_blank">
-   View Python Code in Jupyter Viewer
-</a>
-      </li>
-      <li>
-        <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit09%20Ex1%20parametrised%20Convolutional%20Neural%20Networks%20(CNN)%20-%20Object%20Recognition(1).ipynb" target="_blank">
-          Open in Google Colab
-        </a>
-      </li>
-
-
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/CNN_Ethics_and_Implications.pdf" target="_blank">
-          CNN Ethics and Implications (PDF)
-        </a>
-      </li>
-    </ul>
-  </header>
-</article>
-
-
-    
-
-
-
-    
-<!-- Module 3 - Unit 10: Presentation and support material: Neural Network Models for Object Recognition -->
-<article>
-  <span class="image">
-    <img src="images/pic06.jpg" alt="Presentation: Neural Network Object Recognition" />
-  </span>
-  <header class="major">
-    <h3> Module 3 - Machine Learning January 2025 Unit 10: Presentation: Neural Network Models for Object Recognition</h3>
-    <p>Object classification using CNN on the CIFAR-10 dataset with visual analytics.</p>
-    <ul>
-    <li><a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/project_improvement_3.ipynb" target="_blank">View on GitHub</a></li>
-<li><a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/project_improvement_3.ipynb" target="_blank">Open in Google Colab</a></li>
-
-      <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Presentation_pp_24589_2.pptx" target="_blank"> Neural Network Models for Object Recognition </a></li>
-
-    </ul>
-  </header>
-</article>
-
-    
-    <!-- Module 3 - Unit 11: Model Performance Measurement -->
-<article>
-  <span class="image">
-    <img src="images/pic11.jpg" alt="Unit 11" />
-  </span>
-  <header class="major">
-    <h3> Module 3 - Machine Learning January 2025 Unit 11: Model Performance Measurement</h3>
-    <p>Evaluating classification model performance using SVC with confusion matrix, ROC and precision-recall curves.</p>
-    <ul>
-      <li><a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/Unit11_model_Performance_Measurement(1).ipynb" target="_blank">View Python Code on GitHub</a></li>
-      <li><a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit11_model_Performance_Measurement(1).ipynb" target="_blank">Open in Google Colab</a></li>
-
-      
-      <li><a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/unit11_model_performance_measurement_1(1).ipynb" target="_blank">Change in Parameters Open in Google Colab</a></li>
-     
-      
-      <li><a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit%2011_Evaluating%20classification%20model%20_SVC_Report.pdf" target="_blank">Download PDF Report</a></li>
-    </ul>
-  </header>
-</article>
-
-
-
-    
-<!-- Module 3 - Unit 1: Collaborative Discussion 1 -->
-<article>
-  <span class="image">
-    <img src="images/pic05.jpg" alt="Unit 1" />
-  </span>
-  <header class="major">
-    <h3> Module 3 - Machine Learning January 2025 Unit 1: Collaborative Discussion 1: The 4th Industrial Revolution</h3>
-    <p>The 4th Industrial Revolution: The impact on the investment banking sector</p>
-    <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Initial%20Post_4th_Industrial_Revolution.pdf"
-       class="button icon solid fa-file-pdf" target="_blank">Initial Post Discussion 1</a>
-  </header>
-</article>
-
-<!-- Module 3 - Unit 8: Collaborative Discussion 2 -->
-<article>
-  <span class="image">
-    <img src="images/pic05.jpg" alt="Unit 8" />
-  </span>
-  <header class="major">
-    <h3> Module 3 - Machine Learning January 2025 Unit 8: Collaborative Discussion 2: Legal and Ethical Views on ANN Applications</h3>
-    <p>Explore legal and ethical perspectives on artificial neural networks in financial settings.</p>
-    <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Initial%20Post_LLM%20in%20IBs.pdf"
-       class="button icon solid fa-file-pdf" target="_blank">Initial Post Discussion 2</a>
-  </header>
-</article>
-    
-  </section>
-</div>
-
-
-  </section>
-</div>
-
-<!-- Module 4 Section -->
-<section id="module4" class="tiles" style="margin-top: 5em;">
-  <header class="major" style="text-align: center; margin-bottom: 2em;">
-    <h2>Module 4: Knowledge Representation & Reasoning</h2>
-    <p>Exploring ontology design, OWL, and Protégé for intelligent reasoning systems.</p>
-  </header>
-
-  <!-- Module 4 - Unit 1: Collaborative Discussion - The Role of Ontologies -->
-  <article>
-    <span class="image">
-      <img src="images/pic01.jpg" alt="Unit 1" />
-    </span>
-    <header class="major">
-      <h3><a href="module4_unit1.html" class="link"> Module 4 - Unit 1: The Role of Ontologies in AI</a></h3>
-      <p>Initial thoughts on ontologies and formal knowledge representation in intelligent systems.</p>
-    </header>
-  </article>
-
-  <!-- Module 4 - Unit 7: Case Study Review -->
-<article>
-  <span class="image">
-    <img src="images/pic02.jpg" alt="Unit 7" />
-  </span>
-  <header class="major">
-    <h3>Module 4 -  Unit 7: Case Study Review</h3>
-    <p>A critical analysis of the paper ‘A curated ontology-based large-scale knowledge graph of artificial intelligence tasks and benchmarks’ by Kathrin Blagec.</p>
-    <ul>
-      <li>
-        <a href="intelligence_task_ontology.pdf" target="_blank" class="button icon solid fa-file-pdf">
-          Download PDF – Intelligence Task Ontology Case Study
-        </a>
-      </li>
-    </ul>
-  </header>
-</article>
-
-  
-<!-- Module 4 -  Unit 11: Protégé Modelling Assignment -->
-<article>
-  <span class="image">
-    <img src="images/pic03.jpg" alt="Unit 11" />
-  </span>
-  <header class="major">
-    <h3>Module 4 - Unit 11: Protégé Modelling Assignment</h3>
-    <p>Assignment: by employing the Protégé software, construct a prototype ontology as the backbone for an AI-driven job-matching service. This service matches job seekers with suitable employment opportunities, aligning with their individual skills, experiences, and preferences.</p>
-    <ul>
-      
-      <li>
-        <a href="Modelling_Assingment_Protege.pdf" target="_blank" class="button icon solid fa-file-pdf">
-          Download PDF – Protégé Modelling Assignment
-        </a>
-      </li>
-    </ul>
-  </header>
-</article>
-
-
-<!-- Module 4 - Reflective Report -->
-<article>
-  <span class="image">
-    <img src="images/pic05.jpg" alt="Reflection" />
-  </span>
-  <header class="major">
-    <h3>Module 4 - Reflective Report: KRR Journey</h3>
-    <p>Personal reflection on the module using Rolfe's model: What, So What, Now What.</p>
-    <ul>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Reflective%20Report_Module%204_Pavlos%20Papachristos_pp24589.pdf" 
-           target="_blank"
-           class="button icon solid fa-file-pdf">
-          Download Reflective Report (PDF)
-        </a>
-      </li>
-      
-    </ul>
-  </header>
-</article>
-</section>
-
-    <!-- Module 5 Section: AI Agents -->
-<section id="module5" class="tiles" style="margin-top: 5em;">
-  <header class="major" style="text-align: center; margin-bottom: 2em;">
-    <h2>Module 5: Intelligent Agents</h2>
-    <p>Exploring AI agent architectures, multi-agent systems, and autonomous decision-making in modern applications.</p>
-  </header>
-
-  <!-- Module 5 - Unit 1: Collaborative Discussion - Deep Learning Application -->
-  <article>
-    <span class="image">
-      <img src="images/pic01.jpg" alt="Unit 1" />
-    </span>
-    <header class="major">
-      <h3>  Module 5 - Unit 1: Collaborative Discussion - Deep Learning Application</h3>
-      <p>Research and analysis of Large Language Model agents: technology overview, socio-technical implications, and agent-based computing foundations.</p>
-      <ul>
-        <li>
-          <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Agent_Based_Systems_Rise_and_Benefits.pdf" 
-             target="_blank" 
-             class="button icon solid fa-file-pdf">
-            Download PDF – LLM Agents Research Paper
-          </a>
-        </li>
-
- <li>
-          <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Response%20to%20Posts%20Unit%201.pdf" 
-             target="_blank" 
-             class="button icon solid fa-file-pdf">
-            Download PDF – LLM Agents Research Paper - Response to Posts
-          </a>
-        </li>
-        
-      </ul>
-    </header>
-  </article>
-
-
-
-
-  
-  <!-- Module 5 - Unit 6: Using KQML and KIF to Design Communications Between Agents -->
-<article>
-  <span class="image">
-    <img src="images/pic06.jpg" alt="Unit 6" />
-  </span>
-  <header class="major">
-    <h3>Module 5 - Unit 6: Using KQML and KIF to Design Communications Between Agents</h3>
-    <p>Practical implementation of agent communication protocols using KQML/KIF with Alice and Bob procurement scenario, comprehensive visual analytics, and critical analysis of agent communication languages.</p>
-    <ul>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/kqml_agent_dialogue.py" 
-           target="_blank"
-           class="button icon solid fa-code">
-          Python Implementation - KQML/KIF Base Code
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/kqml_agent_dialogue_visual.ipynb" 
-           target="_blank"
-           class="button icon solid fa-book">
-          View Jupyter Notebook with Visualizations
-        </a>
-      </li>
-      <li>
-        <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/kqml_agent_dialogue_visual.ipynb" 
-           target="_blank"
-           class="button icon solid fa-play">
-          Run in Google Colab (Interactive)
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/AGENT COMMUNICATION LANGUAGES.pdf" 
-           target="_blank"
-           class="button icon solid fa-file-pdf">
-          Download Analysis Paper (PDF)
-        </a>
-      </li>
-
-<li>
-  <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Intelligent%20Agent%20Module%20-%20Group%20F%20Project%20-%20Google%20Docs%20(1).pdf" 
-     target="_blank"
-     class="button icon solid fa-file-pdf">
-    Download Team Project Report (PDF)
-  </a>
-</li>
-      
-    </ul>
-  </header>
-</article>
-
-
-
-<!-- Module 5 - Unit 5: Collaborative Discussion - Agent Communication Languages -->
-  <article>
-    <span class="image">
-      <img src="images/pic01.jpg" alt="Unit 5" />
-    </span>
-    <header class="major">
-      <h3>  Module 5 - Unit 5: Collaborative Discussion - Agent Communication Languages</h3>
-      <p>potential advantages and disadvantages of the use of agent communication languages.</p>
-      <ul>
-        <li>
-          <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Discussion%20Topic_Agent%20Communication%20Languages.pdf" 
-             target="_blank" 
-             class="button icon solid fa-file-pdf">
-            Download PDF – Agent Communication Languages - Post and Responses to the Forum
-          </a>
-        </li>
-     
-      </ul>
-    </header>
-  </article>
-
-
-  
-<!-- Module 5 - Unit 8: Creating Parse Trees -->
-<article>
-  <span class="image">
-    <img src="images/pic08.jpg" alt="Parse Trees" />
-  </span>
-  <header class="major">
-    <h3>Module 5 - Unit 8: Creating Parse Trees</h3>
-    <p>Constituency-based parse tree analysis in Natural Language Processing. Implementation of syntactic parsing using NLTK, exploring structural ambiguity and PP-attachment problems with practical examples and visualizations.</p>
-    <ul>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/parse_tree_jupyter.py" 
-           target="_blank"
-           class="button icon solid fa-code">
-          View Python Code - Parse Tree Generator
-        </a>
-      </li>
-      <li>
-       <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/parse_tree_notebook.ipynb" 
-           target="_blank"
-           class="button icon solid fa-play">
-          Run in Google Colab (Interactive) ⚡
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Constituency-Based Parse Tree Analysis.pdf" 
-           target="_blank"
-           class="button icon solid fa-file-pdf">
-          Download Analysis Paper (PDF)
-        </a>
-      </li>
-    </ul>
-  </header>
-</article>
-
-
-
-
-
-<!-- Module 5 - Unit 9: Deep Learning  -->
-<article>
-  <span class="image">
-    <img src="images/pic10.jpg" alt="Collaborative Discussion 3: Deep Learning" />
-  </span>
-  <header class="major">
-    <h3>Module 5 - Unit 9: Collaborative Discussion 3: Ethical Implications of Deep Learning Technologies</h3>
-    <p>Research and analysis of Large Language Model agents: operational framework, socio-technical implications, and theoretical foundations. Exploring autonomous decision-making, multi-agent architectures, and ethical considerations in AI deployment.</p>
-    <ul>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Ethical%20Implications%20of%20Deep%20Learning%20Technologies.pdf" 
-           target="_blank"
-           class="button icon solid fa-file-pdf">
-          Download Collaborative Discussion 3: Ethical Implications of Deep Learning Technologies - Initial Post and Responses to the Forum (PDF)
-        </a>
-      </li>
-    </ul>
-  </header>
-</article>
-
-  
-  
-
-<!-- Module 5 - Unit 10: Deep Learning Application Research -->
-<article>
-  <span class="image">
-    <img src="images/pic10.jpg" alt="Deep Learning LLM Agents" />
-  </span>
-  <header class="major">
-    <h3>Module 5 - Unit 10: Deep Learning in Action - LLM Agents</h3>
-    <p>Research and analysis of Large Language Model agents: operational framework, socio-technical implications, and theoretical foundations. Exploring autonomous decision-making, multi-agent architectures, and ethical considerations in AI deployment.</p>
-    <ul>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Deep%20Learning%20Application_LLM%20Agents.pdf" 
-           target="_blank"
-           class="button icon solid fa-file-pdf">
-          Download Research Paper - LLM Agents (PDF)
-        </a>
-      </li>
-    </ul>
-  </header>
-</article>
-
-
-<!-- Module 5 - Unit 11: Intelligent Agents in Action -->
-<article>
-  <span class="image">
-    <img src="images/pic11.jpg" alt="Intelligent Agents Cybersecurity" />
-  </span>
-  <header class="major">
-    <h3>Module 5 - Unit 11: Intelligent Agents in Action</h3>
-    <p>Practical implementation of multi-agent systems for cybersecurity threat detection and response. Demonstrates autonomous agent coordination, distributed decision-making, and real-time monitoring capabilities in security operations.</p>
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/drive/1DqTrDJTha3Meq4crWx2ENQcDu6Onho_2#scrollTo=dxwIPGFHtntC" 
-           target="_blank"
-           class="button primary icon solid fa-play">
-          🚀 Run Interactive Demo (Google Colab)
-        </a>
-      </li>
-      
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/simple_cyber_platform.py" 
-           target="_blank"
-           class="button icon solid fa-file-code">
-          Download Simplified Version - simple_cyber_platform.py
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Presentation_pp%2024589_fin.pptx" 
-           target="_blank"
-           class="button icon solid fa-file-powerpoint">
-          Download Presentation (PPTX)
-        </a>
-      </li>
-    </ul>
-  </header>
-</article>
-
-
-
-<!-- Module 5 - Unit 12: E-Portfolio Submission & Critical Reflections -->
-  <article>
-    <span class="image">
-      <img src="images/pic01.jpg" alt="Unit 12" />
-    </span>
-    <header class="major">
-      <h3>  Module 5 - Unit 12: E-Portfolio Submission & Critical Reflections</h3>
-      <p>E-Portfolio Submission & Critical Reflections.</p>
-      <ul>
-        <li>
-          <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/ePortfolio_Reflections_Pavlos Papachristos_24589.pdf" 
-             target="_blank" 
-             class="button icon solid fa-file-pdf">
-            Download PDF – E-Portfolio Submission & Critical Reflections
-          </a>
-        </li>
-     
-      </ul>
-    </header>
-  </article>
-
-
-
-  
-  
-  <!-- Unit 2: Template for your next unit -->
-  <!--
-  <article>
-    <span class="image">
-      <img src="images/pic02.jpg" alt="Unit 2" />
-    </span>
-    <header class="major">
-      <h3>Unit 2: [Your Title]</h3>
-      <p>[Your description here]</p>
-      <ul>
-        <li><a href="YOUR_LINK" target="_blank">View on GitHub</a></li>
-        <li><a href="YOUR_LINK" target="_blank">Open in Google Colab</a></li>
-      </ul>
-    </header>
-  </article>
-  -->
-
-  <!-- Unit 3: Template -->
-  <!--
-  <article>
-    <span class="image">
-      <img src="images/pic03.jpg" alt="Unit 3" />
-    </span>
-    <header class="major">
-      <h3>Unit 3: [Your Title]</h3>
-      <p>[Your description]</p>
-    </header>
-  </article>
-  -->
-
-  <!-- Add more units following the same pattern -->
-  
-</section>
-
-
-
-
-    
-
-<!-- Contact -->
-<section id="contact">
-  
-
-
-
-      <!-- Contact -->
-      <section id="contact">
-        <div class="inner">
-          
-          <section class="split">
-            <section>
-              <div class="contact-method">
-                <span class="icon solid alt fa-envelope"></span>
-                <h3>Email</h3>
-                <a href="mailto:pavlos.papachristos.patmos@gmail.com">pavlos.papachristos.patmos@gmail.com</a>
+        <div class="units-container">
+          <div class="units-grid">
+            
+            <!-- Unit 1: Collaborative Discussion 1 -->
+            <div class="unit-item">
+              <h3>Unit 1: Collaborative Discussion 1</h3>
+              <p>The 4th Industrial Revolution: The impact on the investment banking sector</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Initial%20Post_4th_Industrial_Revolution.pdf" target="_blank">📄 View Initial Post Discussion 1</a>
               </div>
-            </section>
-            <section>
-              <div class="contact-method">
-                <span class="icon solid alt fa-phone"></span>
-                <h3>Phone</h3>
-                <span>(000) 000-0000 x12387</span>
+            </div>
+
+            <!-- Unit 3: Correlation & Regression -->
+            <div class="unit-item">
+              <h3>Unit 3: Correlation & Regression</h3>
+              <p>Exploring correlation and regression using Python notebooks and dataset variations.</p>
+              <div class="unit-links">
+                <a href="unit3.html">📖 View Details</a>
               </div>
-            </section>
-            <section>
-              <div class="contact-method">
-                <span class="icon solid alt fa-home"></span>
-                <h3>Address</h3>
-                <span><br />
-                London SE19 <br />
-                UK </span>
+            </div>
+
+            <!-- Unit 4: Seminar – Linear Regression -->
+            <div class="unit-item">
+              <h3>Unit 4: Seminar – Linear Regression with Scikit-Learn</h3>
+              <p>Explore correlation and regression between global population and GDP using Python and Colab notebooks.</p>
+              <div class="unit-links">
+                <a href="unit4.html">📖 View Details</a>
               </div>
-            </section>
-          </section>
+            </div>
+
+            <!-- Unit 5: Jaccard Coefficient -->
+            <div class="unit-item">
+              <h3>Unit 5: Jaccard Coefficient Calculations</h3>
+              <p>Measure similarity between patient test profiles using Jaccard metrics.</p>
+              <div class="unit-links">
+                <a href="unit5.html">📖 View Details</a>
+              </div>
+            </div>
+
+            <!-- Unit 6: Development Team Project -->
+            <div class="unit-item">
+              <h3>Unit 6: Development Team Project</h3>
+              <p>Collaborative analysis of NYC Airbnb market using clustering and strategic insights.</p>
+              <div class="unit-links">
+                <a href="project.html">📖 View Project</a>
+              </div>
+            </div>
+
+            <!-- Unit 7: Perceptron Activities -->
+            <div class="unit-item">
+              <h3>Unit 7: Perceptron Activities</h3>
+              <p>Simple & multi-layer perceptrons applied to cleaned datasets with visualizations.</p>
+              <div class="unit-links">
+                <a href="unit7.html">📖 View Details</a>
+              </div>
+            </div>
+
+            <!-- Unit 8: Gradient Cost Function -->
+            <div class="unit-item">
+              <h3>Unit 8: Gradient Cost Function</h3>
+              <p>Analysis of linear regression using gradient descent with Python visualization and metrics.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/Unit08%20Ex4%20gradient_descent_cost_function(1).ipynb" target="_blank">💻 View Python Code on GitHub</a>
+                <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit08%20Ex4%20gradient_descent_cost_function(1).ipynb" target="_blank">🚀 Open in Google Colab</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Gradient_Descent_Analysis_Summary.docx" target="_blank">📄 Download Summary Document (Word)</a>
+              </div>
+            </div>
+
+            <!-- Unit 8: Collaborative Discussion 2 -->
+            <div class="unit-item">
+              <h3>Unit 8: Collaborative Discussion 2</h3>
+              <p>Legal and Ethical Views on ANN Applications - Explore legal and ethical perspectives on artificial neural networks in financial settings.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Initial%20Post_LLM%20in%20IBs.pdf" target="_blank">📄 View Initial Post Discussion 2</a>
+              </div>
+            </div>
+
+            <!-- Unit 9: Convolutional Neural Networks -->
+            <div class="unit-item">
+              <h3>Unit 9: Convolutional Neural Networks (Parametrised Examples)</h3>
+              <p>Includes parametrised CNN use cases for the ePortfolio task, with downloadable code and summaries.</p>
+              <div class="unit-links">
+                <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Unit09%20Ex1%20parametrised%20Convolutional%20Neural%20Networks%20(CNN)%20-%20Object%20Recognition(1).ipynb" target="_blank">📖 View Python Code in Jupyter Viewer</a>
+                <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit09%20Ex1%20parametrised%20Convolutional%20Neural%20Networks%20(CNN)%20-%20Object%20Recognition(1).ipynb" target="_blank">🚀 Open in Google Colab</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/CNN_Ethics_and_Implications.pdf" target="_blank">📄 CNN Ethics and Implications (PDF)</a>
+              </div>
+            </div>
+
+            <!-- Unit 10: Presentation - Neural Network Models -->
+            <div class="unit-item">
+              <h3>Unit 10: Presentation - Neural Network Models for Object Recognition</h3>
+              <p>Object classification using CNN on the CIFAR-10 dataset with visual analytics.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/project_improvement_3.ipynb" target="_blank">💻 View on GitHub</a>
+                <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/project_improvement_3.ipynb" target="_blank">🚀 Open in Google Colab</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Presentation_pp_24589_2.pptx" target="_blank">📊 Neural Network Models Presentation</a>
+              </div>
+            </div>
+
+            <!-- Unit 11: Model Performance Measurement -->
+            <div class="unit-item">
+              <h3>Unit 11: Model Performance Measurement</h3>
+              <p>Evaluating classification model performance using SVC with confusion matrix, ROC and precision-recall curves.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/Unit11_model_Performance_Measurement(1).ipynb" target="_blank">💻 View Python Code on GitHub</a>
+                <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/Unit11_model_Performance_Measurement(1).ipynb" target="_blank">🚀 Open in Google Colab</a>
+                <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/unit11_model_performance_measurement_1(1).ipynb" target="_blank">🔧 Change in Parameters - Google Colab</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Unit%2011_Evaluating%20classification%20model%20_SVC_Report.pdf" target="_blank">📄 Download PDF Report</a>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </section>
+      </div>
 
-      <!-- Footer -->
-      <footer id="footer">
-        <div class="inner">
-          <ul class="icons">
-            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-            <li><a href="https://www.linkedin.com/in/pavlos-papachristos-6a5561128/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-          </ul>
-          <ul class="copyright">
-            <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-          </ul>
+      <!-- Module 4: Knowledge Representation & Reasoning -->
+      <div class="module-card module-4 fade-in" style="animation-delay: 0.2s">
+        <div class="module-header" onclick="toggleModule(this)">
+          <h2>
+            Module 4: Knowledge Representation & Reasoning
+            <span class="toggle-icon">▼</span>
+          </h2>
+          <p>Exploring ontology design, OWL, and Protégé for intelligent reasoning systems</p>
+          <div class="module-meta">
+            <span>📚 Knowledge Representation Units</span>
+          </div>
         </div>
-      </footer>
+        <div class="units-container">
+          <div class="units-grid">
+            
+            <!-- Unit 1: The Role of Ontologies in AI -->
+            <div class="unit-item">
+              <h3>Unit 1: The Role of Ontologies in AI</h3>
+              <p>Initial thoughts on ontologies and formal knowledge representation in intelligent systems.</p>
+              <div class="unit-links">
+                <a href="module4_unit1.html">📖 View Discussion</a>
+              </div>
+            </div>
+
+            <!-- Unit 7: Case Study Review -->
+            <div class="unit-item">
+              <h3>Unit 7: Case Study Review</h3>
+              <p>A critical analysis of the paper 'A curated ontology-based large-scale knowledge graph of artificial intelligence tasks and benchmarks' by Kathrin Blagec.</p>
+              <div class="unit-links">
+                <a href="intelligence_task_ontology.pdf" target="_blank">📄 Download PDF – Intelligence Task Ontology Case Study</a>
+              </div>
+            </div>
+
+            <!-- Unit 11: Protégé Modelling Assignment -->
+            <div class="unit-item">
+              <h3>Unit 11: Protégé Modelling Assignment</h3>
+              <p>Assignment: by employing the Protégé software, construct a prototype ontology as the backbone for an AI-driven job-matching service. This service matches job seekers with suitable employment opportunities, aligning with their individual skills, experiences, and preferences.</p>
+              <div class="unit-links">
+                <a href="Modelling_Assingment_Protege.pdf" target="_blank">📄 Download PDF – Protégé Modelling Assignment</a>
+              </div>
+            </div>
+
+            <!-- Reflective Report -->
+            <div class="unit-item">
+              <h3>Reflective Report: KRR Journey</h3>
+              <p>Personal reflection on the module using Rolfe's model: What, So What, Now What.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Reflective%20Report_Module%204_Pavlos%20Papachristos_pp24589.pdf" target="_blank">📄 Download Reflective Report (PDF)</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 5: Intelligent Agents -->
+      <div class="module-card module-5 fade-in" style="animation-delay: 0.25s">
+        <div class="module-header" onclick="toggleModule(this)">
+          <h2>
+            Module 5: Intelligent Agents
+            <span class="toggle-icon">▼</span>
+          </h2>
+          <p>Exploring AI agent architectures, multi-agent systems, and autonomous decision-making</p>
+          <div class="module-meta">
+            <span>📚 Intelligent Agents Units</span>
+          </div>
+        </div>
+        <div class="units-container">
+          <div class="units-grid">
+            
+            <!-- Unit 1: Collaborative Discussion - Deep Learning Application -->
+            <div class="unit-item">
+              <h3>Unit 1: Collaborative Discussion - Deep Learning Application</h3>
+              <p>Research and analysis of Large Language Model agents: technology overview, socio-technical implications, and agent-based computing foundations.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Agent_Based_Systems_Rise_and_Benefits.pdf" target="_blank">📄 Download PDF – LLM Agents Research Paper</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Response%20to%20Posts%20Unit%201.pdf" target="_blank">📄 Download PDF – Response to Posts</a>
+              </div>
+            </div>
+
+            <!-- Unit 5: Collaborative Discussion - Agent Communication Languages -->
+            <div class="unit-item">
+              <h3>Unit 5: Collaborative Discussion - Agent Communication Languages</h3>
+              <p>Potential advantages and disadvantages of the use of agent communication languages.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Discussion%20Topic_Agent%20Communication%20Languages.pdf" target="_blank">📄 Download PDF – Agent Communication Languages</a>
+              </div>
+            </div>
+
+            <!-- Unit 6: Using KQML and KIF -->
+            <div class="unit-item">
+              <h3>Unit 6: Using KQML and KIF to Design Communications Between Agents</h3>
+              <p>Practical implementation of agent communication protocols using KQML/KIF with Alice and Bob procurement scenario, comprehensive visual analytics, and critical analysis of agent communication languages.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/kqml_agent_dialogue.py" target="_blank">💻 Python Implementation - KQML/KIF Base Code</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/kqml_agent_dialogue_visual.ipynb" target="_blank">📖 View Jupyter Notebook with Visualizations</a>
+                <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/kqml_agent_dialogue_visual.ipynb" target="_blank">🚀 Run in Google Colab (Interactive)</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/AGENT COMMUNICATION LANGUAGES.pdf" target="_blank">📄 Download Analysis Paper (PDF)</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Intelligent%20Agent%20Module%20-%20Group%20F%20Project%20-%20Google%20Docs%20(1).pdf" target="_blank">📄 Download Team Project Report (PDF)</a>
+              </div>
+            </div>
+
+            <!-- Unit 8: Creating Parse Trees -->
+            <div class="unit-item">
+              <h3>Unit 8: Creating Parse Trees</h3>
+              <p>Constituency-based parse tree analysis in Natural Language Processing. Implementation of syntactic parsing using NLTK, exploring structural ambiguity and PP-attachment problems with practical examples and visualizations.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/parse_tree_jupyter.py" target="_blank">💻 View Python Code - Parse Tree Generator</a>
+                <a href="https://colab.research.google.com/github/spike2025-art/eportfolio-uoe/blob/main/parse_tree_notebook.ipynb" target="_blank">🚀 Run in Google Colab (Interactive)</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Constituency-Based Parse Tree Analysis.pdf" target="_blank">📄 Download Analysis Paper (PDF)</a>
+              </div>
+            </div>
+
+            <!-- Unit 9: Collaborative Discussion 3 -->
+            <div class="unit-item">
+              <h3>Unit 9: Collaborative Discussion 3 - Ethical Implications of Deep Learning Technologies</h3>
+              <p>Research and analysis of Large Language Model agents: operational framework, socio-technical implications, and theoretical foundations. Exploring autonomous decision-making, multi-agent architectures, and ethical considerations in AI deployment.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Ethical%20Implications%20of%20Deep%20Learning%20Technologies.pdf" target="_blank">📄 Download Collaborative Discussion 3 (PDF)</a>
+              </div>
+            </div>
+
+            <!-- Unit 10: Deep Learning in Action -->
+            <div class="unit-item">
+              <h3>Unit 10: Deep Learning in Action - LLM Agents</h3>
+              <p>Research and analysis of Large Language Model agents: operational framework, socio-technical implications, and theoretical foundations. Exploring autonomous decision-making, multi-agent architectures, and ethical considerations in AI deployment.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Deep%20Learning%20Application_LLM%20Agents.pdf" target="_blank">📄 Download Research Paper - LLM Agents (PDF)</a>
+              </div>
+            </div>
+
+            <!-- Unit 11: Intelligent Agents in Action -->
+            <div class="unit-item">
+              <h3>Unit 11: Intelligent Agents in Action</h3>
+              <p>Practical implementation of multi-agent systems for cybersecurity threat detection and response. Demonstrates autonomous agent coordination, distributed decision-making, and real-time monitoring capabilities in security operations.</p>
+              <div class="unit-links">
+                <a href="https://colab.research.google.com/drive/1DqTrDJTha3Meq4crWx2ENQcDu6Onho_2#scrollTo=dxwIPGFHtntC" target="_blank">🚀 Run Interactive Demo (Google Colab)</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/simple_cyber_platform.py" target="_blank">💻 Download Simplified Version - simple_cyber_platform.py</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Presentation_pp%2024589_fin.pptx" target="_blank">📊 Download Presentation (PPTX)</a>
+              </div>
+            </div>
+
+            <!-- Unit 12: E-Portfolio Submission & Critical Reflections -->
+            <div class="unit-item">
+              <h3>Unit 12: E-Portfolio Submission & Critical Reflections</h3>
+              <p>E-Portfolio Submission & Critical Reflections on the module journey.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/ePortfolio_Reflections_Pavlos Papachristos_24589.pdf" target="_blank">📄 Download PDF – E-Portfolio Reflections</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 6: Research Methods and Professional Practice -->
+      <div class="module-card module-6 fade-in" style="animation-delay: 0.3s">
+        <div class="module-header" onclick="toggleModule(this)">
+          <h2>
+            Module 6: Research Methods and Professional Practice
+            <span class="toggle-icon">▼</span>
+          </h2>
+          <p>Scientific investigation, research methodologies, and professional ethics in computing</p>
+          <div class="module-meta">
+            <span>📚 Research Methods Units</span>
+          </div>
+        </div>
+        <div class="units-container">
+          <div class="units-grid">
+
+            <!-- Unit 1: Introduction to Research Methods -->
+            <div class="unit-item">
+              <h3>Unit 1: Introduction to Research Methods</h3>
+              <p>The Scientific Investigation and Ethics in Computing. Foundational concepts in research methodology and ethical considerations in computing research.</p>
+              <div class="unit-links">
+                <a href="#contact">📖 Coming Soon</a>
+              </div>
+            </div>
+
+            <!-- Unit 2: Research Questions, Literature Review & Research Proposal -->
+            <div class="unit-item">
+              <h3>Unit 2: Research Questions, Literature Review & Research Proposal</h3>
+              <p>Developing effective research questions, conducting comprehensive literature reviews, and crafting robust research proposals.</p>
+              <div class="unit-links">
+                <a href="#contact">📖 Coming Soon</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+
+    <div class="contact-section fade-in" style="animation-delay: 0.4s" id="contact">
+      <h2>Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3>📧 Email</h3>
+          <a href="mailto:pavlos.papachristos.patmos@gmail.com">pavlos.papachristos.patmos@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <h3>📍 Location</h3>
+          <p>London SE19, UK</p>
+        </div>
+        <div class="contact-item">
+          <h3>🔗 LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/pavlos-papachristos-6a5561128/" target="_blank">Connect with me</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="fade-in" style="animation-delay: 0.5s">
+      <p>&copy; 2025 Pavlos Papachristos | MSc Artificial Intelligence Portfolio</p>
+      <p>
+        <a href="https://github.com/spike2025-art/eportfolio-uoe" target="_blank">GitHub Repository</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleModule(header) {
+      const moduleCard = header.parentElement;
+      const allModules = document.querySelectorAll('.module-card');
+      
+      allModules.forEach(module => {
+        if (module !== moduleCard) {
+          module.classList.remove('active');
+        }
+      });
+      
+      moduleCard.classList.toggle('active');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
