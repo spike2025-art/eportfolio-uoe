@@ -1,0 +1,7 @@
+EBM_feature,EBM_importance,EBM_rank,Granger_lag,Granger_median_p,Granger_n_sig,Both_agree
+term_spread_lag1_dm,1.0119,3,1,0.6018,0/14,False
+term_spread_lag2_dm,0.5951,7,2,0.1429,3/14,False
+term_spread_lag3_dm,1.7172,1,3,0.1577,5/14,False
+tloans_lag1_dm,0.0173,41,1,0.4507,2/14,False
+tloans_lag2_dm,0.0137,45,2,0.2486,3/14,False
+tloans_lag3_dm,0.0128,46,3,0.1819,3/14,False

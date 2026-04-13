@@ -1,0 +1,3 @@
+label,auroc,auprc,brier,n_train,n_test,crises_train,crises_test,split,model
+  M2_RF,0.4717881944444444,0.3676904637713333,0.27902688888888894,54,72,2,24,Split A: Pre-crisis train | GFC test,M2_RF
+  M3_XGB_sent,0.6397569444444445,0.43497474747474746,0.3070695345644474,54,72,2,24,Split A: Pre-crisis train | GFC test,M3_XGB_sent

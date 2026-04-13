@@ -1,0 +1,5 @@
+Model,AUROC,AUPRC,AUPRC/Base,Brier
+M1: LR (lag1 only),0.7923,0.1726,4.2x,0.1829
+M1b: LR (lag1-3),0.6747,0.1636,4.0x,0.1747
+M2: RF (lag1-3),0.5889,0.0642,1.6x,0.0584
+M3: XGB (macro+sent),0.8137,0.1253,3.1x,0.0748

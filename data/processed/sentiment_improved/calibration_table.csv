@@ -1,0 +1,16 @@
+Model,Mean_predicted,Observed_fraction
+M1 Logistic,0.0394,0.0
+M1 Logistic,0.2081,0.0
+M1 Logistic,0.3905,0.0
+M1 Logistic,0.5889,0.0698
+M1 Logistic,0.7942,0.186
+M2 RF,0.0137,0.0
+M2 RF,0.0333,0.0
+M2 RF,0.0674,0.0
+M2 RF,0.173,0.0233
+M2 RF,0.4713,0.2326
+M3 XGB+sent,0.0073,0.0
+M3 XGB+sent,0.0192,0.0
+M3 XGB+sent,0.0501,0.0233
+M3 XGB+sent,0.1808,0.0
+M3 XGB+sent,0.656,0.25

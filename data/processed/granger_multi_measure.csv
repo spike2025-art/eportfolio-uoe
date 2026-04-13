@@ -1,0 +1,4 @@
+Measure,n_sig,n_tested,pct_sig,median_p
+P_neg,2,18,11.1,0.5649
+P_pos,1,18,5.6,0.4195
+net_sentiment,2,18,11.1,0.4346

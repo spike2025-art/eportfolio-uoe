@@ -1,0 +1,10 @@
+Label,AUROC,AUROC_lo,AUROC_hi,AUPRC,AUPRC_lo,AUPRC_hi,Brier,Base_rate,AUPRC_lift,Context,n_obs,n_crisis
+M2-matched (S2),0.9385,0.8944,0.9712,0.3428,0.1804,0.6374,0.0602,0.0512,6.6993,A_primary_stage2,215,11
+M3 XGB+FinBERT (S2),0.9316,0.8688,0.9793,0.411,0.1902,0.748,0.0608,0.0512,8.0341,A_primary_stage2,215,11
+"E1: equal-weighted avg(M2-matched, M3)",0.943,0.8951,0.9794,0.4396,0.2119,0.7588,0.0566,0.0512,8.5921,A_primary_stage2,215,11
+"M1 LR (S1, extended)",0.7643,0.603,0.9076,0.1958,0.0785,0.4697,0.2401,0.0512,3.8267,B_exploratory_crossstage,215,11
+"M2 RF (S1, extended)",0.9193,0.8554,0.9729,0.354,0.1759,0.6641,0.0609,0.0512,6.9187,B_exploratory_crossstage,215,11
+M2-matched (S2),0.9385,0.8944,0.9712,0.3428,0.1804,0.6374,0.0602,0.0512,6.6993,B_exploratory_crossstage,215,11
+M3 XGB+FinBERT (S2),0.9316,0.8688,0.9793,0.411,0.1902,0.748,0.0608,0.0512,8.0341,B_exploratory_crossstage,215,11
+"E2: avg(M2,M2m,M3) [exploratory only]",0.9452,0.897,0.9826,0.4739,0.237,0.8044,0.0563,0.0512,9.2623,B_exploratory_crossstage,215,11
+"E3: avg(M1,M2,M2m,M3) [M1 miscal, disqualified]",0.9323,0.8702,0.9773,0.468,0.2101,0.7601,0.0799,0.0512,9.1463,B_exploratory_crossstage,215,11
