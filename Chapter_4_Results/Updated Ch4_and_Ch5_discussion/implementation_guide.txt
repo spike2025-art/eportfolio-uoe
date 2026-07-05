@@ -1,0 +1,278 @@
+
+================================================================================
+COMPLETE IMPLEMENTATION GUIDE
+Case Study Feature Evidence: Section 5.4.1 + Chapter 4 Cross-Reference
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+!! CRITICAL DATA FLAG — READ BEFORE INSERTING ANYTHING !!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The JST panel (df_macro_augmented.csv) shows:
+  Sweden: crisisjst = 1 in 2008 → target_h2 = 1 in 2007
+  UK:     crisisjst = 1 in 2007 → target_h2 = 1 in 2005 and 2006
+                                   target_h2 = 0 in 2007
+
+IMPLICATION FOR SWEDEN: Sweden DID experience a banking crisis in 2008 per the
+JST chronology. The model's probability of 0.783 in 2007 was therefore a TRUE
+POSITIVE by the training target (target_h2). The existing chapter text calls
+Sweden a "false positive" with "no systemic crisis" — this is inconsistent with
+the JST data and needs correction.
+
+ACTION REQUIRED before inserting Section 5.4.1:
+  Option A (minimal): Add a footnote in the existing Section 5.4 paragraph
+  clarifying that Sweden's 2008 stress is recorded in the JST chronology but
+  the crisis mechanism was contagion-driven rather than domestic credit-boom.
+  
+  Option B (recommended): Change the Sweden characterisation from "false
+  positive / no systemic crisis" to "true positive with mechanism mismatch" —
+  the model correctly predicted crisis risk but identified a credit-boom
+  precursor pattern where the actual crisis was transmitted via contagion.
+  This is STRONGER for your crisis heterogeneity argument, not weaker.
+
+IMPLICATION FOR UK: The model's probability of 0.171 in 2007 is technically
+a TRUE NEGATIVE by target_h2 (UK had no NEW crisis onset in 2008-2009). The
+"false negative" correctly refers to the model's low predictions in 2005-2006
+(when target_h2=1 for UK, crisis onset in 2007). The 2007 cross-section
+analysis uses features from lag1=2006, lag2=2005, lag3=2004 — so the 2007
+probability of 0.171 is the "year of crisis" prediction, not a strictly
+prospective prediction. This distinction is already handled by your existing
+text; no correction needed for UK.
+
+RECOMMEND: Check which crisis database was used for Figure 4.11's crisis-type
+annotation (Fundamental/Contagion/No crisis). If it is Laeven-Valencia rather
+than JST, Sweden may be classified as "No crisis" in L-V even though JST shows
+crisisjst=1. Add a footnote clarifying this.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP-BY-STEP IMPLEMENTATION GUIDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1 — RESOLVE SWEDEN'S CRISIS STATUS (15 minutes)
+───────────────────────────────────────────────────────
+1a. Open NB09B. Check which crisis database is used for the Figure 4.11
+    crisis_type annotation column. Confirm whether Sweden has a "crisis_type"
+    value of "No crisis", "Contagion", or "Fundamental".
+
+1b. If Sweden = "No crisis" in your annotation despite JST crisisjst=1 in 2008:
+    Add a footnote to Figure 4.11 and to the Sweden mention in Section 5.4:
+    "The JST chronology records a banking crisis onset for Sweden in 2008.
+    Sweden is classified as 'No crisis' in Figure 4.11 using the Laeven-
+    Valencia (2020) typology, in which Sweden 2008 does not meet the systemic
+    threshold. The JST and L-V classification differences reflect distinct
+    methodological criteria for systemic crisis designation."
+    
+1c. If Sweden = "Contagion" in your annotation: update the Sweden sentence in
+    Section 5.4 from "no systemic crisis" to "crisis driven by contagion
+    rather than domestic imbalance" and relabel in Figure 4.11 if needed.
+
+1d. If you confirm Sweden = "No crisis" and decide to keep existing text: add
+    only the footnote from 1b. The Section 5.4.1 text (Step 4) uses careful
+    language ("banking stress did not develop into a domestic credit-boom
+    crisis") which remains defensible under either classification.
+
+
+STEP 2 — RETRIEVE SPAIN'S E1-EBM 2007 PROBABILITY (5 minutes)
+────────────────────────────────────────────────────────────────
+2a. Open NB09B. Find the DataFrame containing 2007 country-level OOS
+    probabilities from E1-EBM (equal-weight average of M2-matched and EBM).
+    Run: df_2007 = oos_df[oos_df['year']==2007][['iso','e1_ebm_prob']].
+    Note Spain's (ESP) probability value.
+
+2b. Insert that value in Table 5.1 in place of "[see Fig. 4.11]".
+    Spain is target_h2=1 in 2007 and should appear in the upper half of
+    the Figure 4.11 ranking as a fundamental crisis country.
+
+2c. If NB09B cannot be re-run: read Spain's bar height visually from Figure
+    4.11 and report as "approximately 0.XX (Figure 4.11)".
+
+
+STEP 3 — CHAPTER 4 CHANGE: Cross-reference in Section 4.10.3 (2 minutes)
+───────────────────────────────────────────────────────────────────────────
+Location: Chapter4_EBM_Final_v8.docx, Section 4.10.3
+Find the sentence (last sentence of the section):
+  "...both are consistent with the crisis heterogeneity argument developed
+  above and with the crisis heterogeneity argument developed above."
+   [actual text ends: "rather than model failure in a general sense."]
+
+ADD immediately after "rather than model failure in a general sense.":
+
+  "The feature-level underpinning of both anomalies is examined in
+  Section 5.4.1."
+
+That is the ONLY change to Chapter 4.
+
+
+STEP 4 — CHAPTER 5 CHANGES (main work)
+────────────────────────────────────────
+
+CHANGE 4a: Correct Sweden description in existing Section 5.4 paragraph
+Location: Section 5.4, the paragraph beginning "Two country-level results..."
+Find: "Sweden (E1-EBM probability 0.783, rank 5, no systemic crisis) is the
+       most prominent false positive."
+REPLACE WITH: "Sweden (E1-EBM probability 0.783, rank 5) presents a more
+               nuanced case: Sweden's feature profile signalled elevated
+               macro-financial risk and a banking crisis was recorded in the
+               JST chronology for 2008, but the stress was transmitted via
+               contagion from international financial markets rather than
+               through the domestic credit-boom mechanism captured in the
+               feature set."
+
+Find: "The absence of a systemic crisis reflects institutional buffers —
+       conservative bank regulation, strong capital positions — that are not
+       observable in the macro feature set."
+REPLACE WITH: "The absence of a domestically driven systemic crisis reflects
+               both Sweden's conservative post-1990s regulatory framework and
+               the contagion nature of the stress — factors not observable
+               in the macro panel."
+
+CHANGE 4b: Insert Table 5.1 (see exact table text below)
+Location: After the revised Sweden/UK paragraph in Section 5.4 (after "...
+           consistent with the crisis heterogeneity argument developed above.")
+
+CHANGE 4c: Insert Section 5.4.1 (see exact subsection text below)
+Location: Immediately after Table 5.1, still within Section 5.4, before
+           the start of Section 5.5.
+
+CHANGE 4d: Figure 5.1 (OPTIONAL — see guidance in Step 5)
+
+
+STEP 5 — FIGURE (optional, ~30 minutes if included)
+─────────────────────────────────────────────────────
+A figure (Figure 5.1) has been generated by the companion Python script
+(figure_5_1_case_study.py). It shows grouped bars for the 5 features across
+all three countries with values labelled.
+
+INCLUDE IF: Chapter 5 currently has no figures and you want visual support
+            for the narrative. The figure adds approximately 40 words of
+            caption but takes a figure slot.
+
+OMIT IF: You are tight on the 13,000-word limit, or if adding a figure
+          to Chapter 5 (a Discussion chapter) feels inconsistent with the
+          chapter's style. The table alone is fully sufficient.
+
+If included: label as Figure 5.1 and insert between Table 5.1 and Section
+             5.4.1. Renumber any subsequent figures in Chapter 5 if needed.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPLETE TABLE 5.1 TEXT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Table 5.1. Key macro-financial feature values for selected 2007 cross-section
+countries, 2004–2006 average
+
+Feature                           Spain (ESP)     Sweden (SWE)    UK (GBR)
+                                  Correct hit     True positive   False negative
+                                                  [mech. note]
+────────────────────────────────────────────────────────────────────────────
+Credit growth, raw (% p.a.)         19.8             7.4            9.3
+Credit growth, demeaned             +0.078          −0.002         −0.004
+House price growth, raw (% p.a.)    17.6            11.1           13.3
+Term spread lag1, demeaned (pp)     +1.280          +1.069         +0.538 †
+Short-term rate lag1, demeaned(pp)  −6.766          −5.598         −3.570
+────────────────────────────────────────────────────────────────────────────
+E1-EBM 2007 probability             [Fig. 4.11]     0.783          0.171
+────────────────────────────────────────────────────────────────────────────
+
+† UK term spread lag1 (demeaned) declined monotonically across the period:
+  +1.40 pp (2004), +0.34 pp (2005), −0.12 pp (2006), reflecting Bank of
+  England rate tightening. All other values are three-year (2004–2006)
+  averages.
+
+Source: JST Macrohistory Database R6. Features country-demeaned from
+expanding means following Section 4.1. Demeaned short-term rate represents
+the deviation of the actual short rate from the country's own expanding
+historical mean; a larger negative value indicates more accommodative
+conditions relative to that country's own history. Sweden is labelled 'True
+positive [mech. note]' because the JST chronology records a banking crisis
+onset in 2008 (target_h2 = 1 in 2007); the crisis mechanism was contagion-
+driven rather than domestic credit-boom, consistent with Section 5.4's
+heterogeneity argument. Spain's E1-EBM probability is available in Figure
+4.11; UK and Sweden values from Section 4.10.3.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPLETE SECTION 5.4.1 TEXT  (~270 words)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.4.1  Feature-Level Evidence: The United Kingdom and Sweden
+
+Table 5.1 moves the preceding discussion from conceptual assertion to
+data-backed evidence, examining the macro-financial inputs that the E1-EBM
+ensemble received for the United Kingdom and Sweden in 2004–2006, with Spain
+as the reference case for a correctly identified fundamental crisis. Features
+are restricted to those ranked consistently among the model's principal
+predictors: credit growth, house price dynamics, term spread, and short-term
+interest rate conditions.
+
+Spain's profile is unambiguous. Demeaned credit growth of +0.078 represents
+a substantial deviation above Spain's own historical norm — raw credit growth
+of 19.8 per cent per annum, more than double the United Kingdom's 9.3 per cent
+and Sweden's 7.4 per cent — consistent with the domestic credit-boom precursor
+pattern on which the model is trained.
+
+For the United Kingdom, the demeaned credit growth figure is −0.004:
+statistically indistinguishable from zero, indicating that UK credit expansion
+in 2004–2006 was at its own historical norm, not above it. The term spread
+declined monotonically from +1.40 pp (2004) to −0.12 pp (2006) as the Bank
+of England tightened, signalling a contracting rather than accommodative
+financial environment. On the feature evidence available to it, the model's
+low assigned probability (0.171) was internally consistent. The failure is one
+of scope: the UK's 2007–2008 stress was concentrated in the wholesale funding
+dependency of institutions such as Northern Rock — a structural vulnerability
+that leaves no trace in credit growth, house price, or yield-curve features.
+
+Sweden presents the analytically more instructive case. Demeaned credit growth
+is −0.002, nearly identical to the United Kingdom, ruling out excessive credit
+expansion as the driver of the model's high probability (0.783). The
+differentiating signals are monetary: Sweden's short-term interest rate stood
+5.60 percentage points below its own historical mean in 2004–2006, compared
+with 3.57 percentage points below for the United Kingdom — materially more
+accommodative conditions relative to Sweden's own long-run norm. The term
+spread remained consistently positive (+1.069 pp demeaned) throughout the
+period. EBM's non-linear shape functions, operating across all 41 features,
+interpreted this combination of unusually accommodative rates and a steepening
+yield curve as consistent with a pre-crisis financial environment. A banking
+crisis did occur in Sweden in 2008 (target_h2 = 1), confirming that the macro
+signals were real; the stress was transmitted via contagion from international
+financial markets rather than domestic credit-boom dynamics, the mechanism the
+model's feature set was built to detect.
+
+Together, these two cases give concrete, data-backed content to the crisis
+heterogeneity argument in Section 5.4. The model functions as a domestic
+credit-boom and accommodative-conditions detector. Its systematic misclassification
+at the boundary of that mechanism — a funding-channel crisis in the United
+Kingdom, a contagion crisis in Sweden — reflects the scope of its feature design
+rather than failures of discrimination per se.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WORD COUNT SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Section 5.4.1 body:       ~270 words
+Table 5.1 caption:         ~90 words
+Chapter 4 addition:         ~10 words (cross-reference sentence only)
+Section 5.4 corrections:   ~40 words net change (replacement, not addition)
+Figure 5.1 caption:         ~50 words (if included)
+────────────────────────────────────────────────────────────────────────────
+Total net addition:        ~410 words (without figure)
+                           ~460 words (with figure)
+
+Note: The dissertation limit excludes figures, tables, and captions per UoEssex
+guidelines (check your specific brief). If captions and tables are excluded
+from the count, the net addition to word count is ~270 words (section body
+only).
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FIGURE CAPTION (if Figure 5.1 included)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Figure 5.1. Key macro-financial feature values for Spain (correct hit),
+Sweden (true positive) and the United Kingdom (false negative), 2004–2006
+averages. Credit growth and house price growth shown as raw annual percentages;
+term spread and short-term rate shown as country-demeaned deviations from
+expanding historical means. Source: JST Macrohistory Database R6.

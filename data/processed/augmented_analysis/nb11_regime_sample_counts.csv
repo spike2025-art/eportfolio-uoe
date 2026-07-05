@@ -1,0 +1,4 @@
+regime,rows,positives,base_rate
+"Regime 1 (Pre-GFC, 1988-2002)",250,11,0.044
+"Regime 2 (GFC, 2003-2020)",319,26,0.08150470219435736
+Full panel (pooled),569,37,0.06502636203866433

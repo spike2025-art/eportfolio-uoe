@@ -1,0 +1,3 @@
+
+Cd C:\Users\Owner\OneDrive\dissertation\notebooks
+jupyter notebook --notebook-dir="C:\Users\Owner\OneDrive\dissertation\notebooks"

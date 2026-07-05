@@ -1,0 +1,5 @@
+Model,Features,AUROC (mean),AUROC (std),AUPRC (mean),AUPRC (std),Brier (mean)
+RF (M3-only),41,0.872,0.099,0.529,0.214,0.042
+EBM (M3-only),41,0.889,0.076,0.527,0.252,0.033
+RF (Augmented),50,0.89,0.081,0.499,0.195,0.039
+EBM (Augmented),50,0.889,0.109,0.527,0.276,0.035
