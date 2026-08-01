@@ -159,6 +159,51 @@
       color: white;
     }
 
+    /* COMPUTING DISSERTATION CONFERENCE SPACE - DEEP CRIMSON */
+    .module-card.module-diss .module-header {
+      background: linear-gradient(135deg, #7b1f2b 0%, #a5343f 100%);
+    }
+    .module-card.module-diss .module-header:hover {
+      background: linear-gradient(135deg, #611620 0%, #8c2b35 100%);
+    }
+    .module-card.module-diss .unit-item {
+      border-left: 4px solid #7b1f2b;
+    }
+    .module-card.module-diss .unit-links a {
+      color: #7b1f2b;
+      border-color: #7b1f2b;
+    }
+    .module-card.module-diss .unit-links a:hover {
+      background: #7b1f2b;
+      color: white;
+    }
+    /* this section embeds figures, so allow a taller expanded panel */
+    .module-card.module-diss.active .units-container {
+      max-height: 40000px;
+    }
+    .module-card.module-diss .diss-fig {
+      width: 100%; height: auto; border-radius: 8px;
+      border: 1px solid #e0e0e0; margin: 10px 0;
+    }
+    .module-card.module-diss .diss-cap {
+      font-size: 0.82em; color: #777; margin: 4px 0 16px 0; line-height: 1.5;
+    }
+    .module-card.module-diss .diss-note {
+      background: #fbeaec; border-left: 3px solid #7b1f2b; border-radius: 4px;
+      padding: 12px 15px; margin: 12px 0; color: #611620;
+      font-size: 0.9em; line-height: 1.6;
+    }
+    .module-card.module-diss table.diss-tbl {
+      width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.85em;
+    }
+    .module-card.module-diss table.diss-tbl th,
+    .module-card.module-diss table.diss-tbl td {
+      border: 1px solid #e0d5d6; padding: 6px 8px; text-align: left;
+    }
+    .module-card.module-diss table.diss-tbl th { background: #f6e9ea; color: #611620; }
+
+
+    
     /* General Styling */
     .module-header {
       color: white;
@@ -1316,7 +1361,192 @@
 
 <!----end test -->  
 
-    
+
+                <!-- Computing Dissertation Conference Space -->
+      <div class="module-card module-diss fade-in" style="animation-delay: 0.35s">
+        <div class="module-header" onclick="toggleModule(this)">
+          <h2>
+            Computing Dissertation Conference Space
+            <span class="toggle-icon">▼</span>
+          </h2>
+          <p>Machine Learning Early-Warning Systems for Banking Crises — MSc AI dissertation (full research lifecycle: proposal → data → results → code → write-up → viva)</p>
+          <div class="module-meta">
+            <span>🎓 MSc Dissertation</span>
+            <span>18 economies · 1989–2020 · 569 obs</span>
+            <span>EBM · Random Forest · XGBoost · FinBERT</span>
+          </div>
+        </div>
+        <div class="units-container">
+          <div class="units-grid">
+
+            <!-- a) PROPOSAL -->
+            <div class="unit-item">
+              <h3>a) Proposal</h3>
+              <p>Research proposal and the literature review that frames the study: data-visualisation and ML for economic-crisis early-warning, and the interpretability–accuracy trade-off.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Economic_Crisis_Prediction_Literature_Review.pdf" target="_blank">📄 Literature Review (PDF)</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Research_Methods_Analysis.pdf" target="_blank">📄 Research Proposal / Methods (PDF)</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Presentation_pp_24589_f.pptx" target="_blank">📊 Proposal Presentation (PPTX)</a>
+              </div>
+            </div>
+
+            <!-- b) DATA -->
+            <div class="unit-item">
+              <h3>b) Data</h3>
+              <p>Macro-financial panel of 18 advanced economies (1989–2020; 569 country-year observations, 37 crisis-positive, 6.5% base rate) plus FinBERT sentiment from 16,622 BIS central-bank speeches. Raw sources are linked at origin; only derived artefacts are hosted here.</p>
+              <div class="unit-links">
+                <a href="javascript:void(0);" onclick="toggleSubsection('diss-data')">📂 Data details &amp; downloads</a>
+              </div>
+              <div id="diss-data" class="subsection" style="display:none; margin-top:16px; padding:18px; background:#f8f9fa; border-radius:8px; border-left:4px solid #7b1f2b;">
+                <div class="diss-note">Third-party raw data are not redistributed. The JST Macrohistory Database and the BIS speech corpus are linked at source; the repository hosts only Pavlos's derived, processed files.</div>
+                <div class="unit-links">
+                  <a href="https://www.macrohistory.net/database/" target="_blank">🔗 JST Macrohistory Database R6 (source)</a>
+                  <a href="https://www.bis.org/cbspeeches/" target="_blank">🔗 BIS central-bank speeches (source)</a>
+                  <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Dissertation_eportfolio/data/df_macro_augmented.csv" target="_blank">📊 df_macro_augmented.csv — analytical panel (569×101+) [pending commit]</a>
+                  <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Dissertation_eportfolio/data/jst_sentiment_master.csv" target="_blank">📊 jst_sentiment_master.csv — FinBERT sentiment features [pending commit]</a>
+                  <a href="https://github.com/spike2025-art/eportfolio-uoe/tree/main/Dissertation_eportfolio/data" target="_blank">📁 All derived data + DATA_SOURCES.md</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- c) INTERMEDIATE RESULTS -->
+            <div class="unit-item">
+              <h3>c) Intermediate results</h3>
+              <p>Exploratory and pre-correction outputs: expanding-window Stage-1 metrics, leave-one-country-out validation, and the auxiliary Granger / panel-logistic tests — including the confounded “sentiment helps” appearance later disentangled by the 2×2 decomposition.</p>
+              <div class="unit-links">
+                <a href="javascript:void(0);" onclick="toggleSubsection('diss-inter')">📈 Intermediate details</a>
+              </div>
+              <div id="diss-inter" class="subsection" style="display:none; margin-top:16px; padding:18px; background:#f8f9fa; border-radius:8px; border-left:4px solid #7b1f2b;">
+                <img class="diss-fig" src="Dissertation_eportfolio/figures/fig4_3_loco_auroc.png" alt="Leave-one-country-out AUROC">
+                <div class="diss-cap">Fig 4.3 — Leave-one-country-out AUROC, EBM vs Random Forest across 15 economies (EBM mean 0.893, RF 0.839). Single-event hold-outs inflate individual bars; NB14 recomputes the robust median.</div>
+                <img class="diss-fig" src="Dissertation_eportfolio/figures/fig4_5_shap_vs_ebm_importance.png" alt="SHAP vs EBM importance">
+                <div class="diss-cap">Fig 4.5 — Post-hoc SHAP (M3) vs EBM native importance; both attribute dominance to macro credit and term-spread features.</div>
+                <div class="unit-links">
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB06B_EBM_Results_Analysis.ipynb" target="_blank">📖 NB06B — Results analysis</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB07B_EBM_Granger_Causality.ipynb" target="_blank">📖 NB07B — Granger / panel logistic</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB08B_EBM_Robustness_Checks.ipynb" target="_blank">📖 NB08B — Robustness (LOCO, horizons)</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB14_LOCO_Median_Recompute.ipynb" target="_blank">📖 NB14 — LOCO median recompute</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- d) RESULTS -->
+            <div class="unit-item">
+              <h3>d) Results</h3>
+              <p>The central finding: ML early-warning systems appear strong within-sample but fail prospectively — reflecting structural non-stationarity in the data-generating process, not model choice.</p>
+              <div class="unit-links">
+                <a href="javascript:void(0);" onclick="toggleSubsection('diss-results')">🎯 Headline results &amp; figures</a>
+              </div>
+              <div id="diss-results" class="subsection" style="display:none; margin-top:16px; padding:18px; background:#f8f9fa; border-radius:8px; border-left:4px solid #7b1f2b;">
+                <div class="diss-note"><strong>The story in three numbers (EBM):</strong> AUROC <strong>0.753</strong> in-sample (Stage 1, expanding window) → <strong>0.960</strong> in the 2007 GFC cross-section → <strong>0.333</strong> out-of-sample (strict temporal Split B; Random Forest 0.481). Both models fall below the 0.75 benchmark in the only informative prospective test.</div>
+
+                <table class="diss-tbl">
+                  <tr><th>Test</th><th>EBM</th><th>Random Forest</th><th>Reading</th></tr>
+                  <tr><td>Stage 1 AUROC (expanding window)</td><td>0.753</td><td>0.636</td><td>within-sample upper bound</td></tr>
+                  <tr><td>2007 cross-section AUROC</td><td>0.960</td><td>0.939</td><td>single-episode ranking</td></tr>
+                  <tr><td>Split B AUROC (strict, prospective)</td><td>0.333</td><td>0.481</td><td>both below 0.75</td></tr>
+                </table>
+
+                <img class="diss-fig" src="Dissertation_eportfolio/figures/fig4_7_shape_function_instability.png" alt="EBM shape-function instability">
+                <div class="diss-cap">Fig 4.7 — EBM shape functions for term spread and credit across lags, fitted on a pre-GFC (2003–2006) vs a GFC-inclusive (2003–2010) window. The learned feature-risk mapping crosses and reverses between windows: direct, model-native evidence of training-window instability.</div>
+
+                <img class="diss-fig" src="Dissertation_eportfolio/figures/fig4_11_2007_country_ranking.png" alt="2007 country ranking">
+                <div class="diss-cap">Fig 4.11 — E1-EBM 2007 country probability ranking, coloured by crisis type (★ = crisis onset within two years). Fundamental &gt; Contagion &gt; No-crisis ordering reflects training on domestic credit-cycle precursors.</div>
+
+                <img class="diss-fig" src="Dissertation_eportfolio/figures/fig4_1_roc_pr_curves.png" alt="ROC and PR curves">
+                <div class="diss-cap">Fig 4.1 — ROC and PR curves across all models, Stage 1 (solid) and the 2007 cross-section (dashed). All metrics are upper bounds on prospective performance.</div>
+
+                <div class="diss-note"><strong>Supporting evidence:</strong> a Chow-type structural-break test confirms a significant coefficient break in credit growth at 2007 (LR = 14.242, p = 0.0066, with sign reversals); US credit-growth at lag 3 is the sole auxiliary test surviving family-wise correction (p = 0.000015). Hypotheses: H1 directional only (algorithm class, not sentiment); H2 not supported in strict form; H3 refined — interpretability does not confer prospective robustness.</div>
+
+                <div class="unit-links">
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB06B_EBM_Results_Analysis.ipynb" target="_blank">📖 NB06B — Full model comparison</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB08B_EBM_Robustness_Checks.ipynb" target="_blank">📖 NB08B — Strict temporal (Split B)</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB09B_EBM_Ensemble_Extension.ipynb" target="_blank">📖 NB09B — Ensemble &amp; 2007 ranking</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB15_Structural_Break_Test.ipynb" target="_blank">📖 NB15 — Structural-break test</a>
+                  <a href="https://github.com/spike2025-art/eportfolio-uoe/tree/main/Dissertation_eportfolio/figures" target="_blank">📁 All figures</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- e) SCRIPTS / NOTEBOOKS -->
+            <div class="unit-item">
+              <h3>e) Scripts / notebooks</h3>
+              <p>The full analytical pipeline, NB01–NB15, in execution order. Read-only via Jupyter viewer (each notebook keeps its saved outputs). Environment: Conda <code>Dissertation</code>, Python 3.11.14, seeds fixed at 42.</p>
+              <div class="unit-links">
+                <a href="javascript:void(0);" onclick="toggleSubsection('diss-nb')">💻 All 16 notebooks</a>
+              </div>
+              <div id="diss-nb" class="subsection" style="display:none; margin-top:16px; padding:18px; background:#f8f9fa; border-radius:8px; border-left:4px solid #7b1f2b;">
+                <p style="color:#611620; font-weight:500; margin:4px 0;">Data preparation &amp; sentiment</p>
+                <div class="unit-links">
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/01_Exploratory_Analysis.ipynb" target="_blank">📖 NB01 — Load JST R6, build 569-obs panel</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/02_FinBERT_Setup_Test.ipynb" target="_blank">📖 NB02 — FinBERT environment check</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/03_BIS_Sentiment_Extraction.ipynb" target="_blank">📖 NB03 — FinBERT over 16,622 BIS speeches</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/04_Sentiment_Aggregation_corrected.ipynb" target="_blank">📖 NB04 — Sentiment aggregation &amp; JST join</a>
+                </div>
+                <p style="color:#611620; font-weight:500; margin:14px 0 4px;">Model training &amp; evaluation</p>
+                <div class="unit-links">
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB05A_Augmented_Model_Training.ipynb" target="_blank">📖 NB05A — Feature build; M1/M2/M3 training</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB05B_EBM_Interpretability_Benchmark.ipynb" target="_blank">📖 NB05B — EBM (M2.5) + shape functions</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB06B_EBM_Results_Analysis.ipynb" target="_blank">📖 NB06B — Model comparison &amp; figures</a>
+                </div>
+                <p style="color:#611620; font-weight:500; margin:14px 0 4px;">Statistics, robustness &amp; ensemble</p>
+                <div class="unit-links">
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB07B_EBM_Granger_Causality.ipynb" target="_blank">📖 NB07B — Granger / panel logistic</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB08B_EBM_Robustness_Checks.ipynb" target="_blank">📖 NB08B — Temporal / LOCO / horizons</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB09B_EBM_Ensemble_Extension.ipynb" target="_blank">📖 NB09B — EBM ensemble extension</a>
+                </div>
+                <p style="color:#611620; font-weight:500; margin:14px 0 4px;">Extensions &amp; Phase-2 checks</p>
+                <div class="unit-links">
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB10C_Topic_Sentiment_Models.ipynb" target="_blank">📖 NB10C — Topic-sentiment (null result)</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB11_Regime_Conditional_Prototype.ipynb" target="_blank">📖 NB11 — Regime-conditional prototype</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB12_EBM_Sentiment_Extension.ipynb" target="_blank">📖 NB12 — 2×2 algorithm × sentiment</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB13_EBM_Hyperparameter_Robustness.ipynb" target="_blank">📖 NB13 — Hyperparameter robustness</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB14_LOCO_Median_Recompute.ipynb" target="_blank">📖 NB14 — LOCO median recompute</a>
+                  <a href="https://nbviewer.org/github/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/notebooks/NB15_Structural_Break_Test.ipynb" target="_blank">📖 NB15 — Structural-break test</a>
+                </div>
+                <div class="unit-links" style="margin-top:14px;">
+                  <a href="https://github.com/spike2025-art/eportfolio-uoe/tree/main/Dissertation_eportfolio/notebooks" target="_blank">📁 All notebooks on GitHub</a>
+                  <a href="https://github.com/spike2025-art/eportfolio-uoe/blob/main/Dissertation_eportfolio/environment/REPRODUCIBILITY.md" target="_blank">🔧 Environment &amp; reproducibility</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- f) DISSERTATION -->
+            <div class="unit-item">
+              <h3>f) Dissertation</h3>
+              <p>The full written dissertation: <em>Machine Learning Early-Warning Systems for Banking Crises</em> (University of Essex Online, MSc AI). Six chapters, appendices, and reproducibility inventory.</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Dissertation_eportfolio/artefacts/Dissertation_Final.pdf" target="_blank">📄 Dissertation (PDF) [pending final commit]</a>
+              </div>
+            </div>
+
+            <!-- g) PRESENTATION -->
+            <div class="unit-item">
+              <h3>g) Presentation</h3>
+              <p>Viva presentation and a spoken-word narrated summary of the methodology and findings (Chapters 4–6).</p>
+              <div class="unit-links">
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Dissertation_eportfolio/artefacts/Viva_Presentation.pptx" target="_blank">📊 Viva Presentation (PPTX) [pending commit]</a>
+                <a href="https://github.com/spike2025-art/eportfolio-uoe/raw/main/Dissertation_eportfolio/artefacts/narration_script.txt" target="_blank">📝 Narration script (TXT) [pending commit]</a>
+                <!-- Audio: add once the MP3 is committed to Dissertation_eportfolio/artefacts/ -->
+              </div>
+            </div>
+
+            <!-- h) REVIEW & COMMENTS -->
+            <div class="unit-item">
+              <h3>h) Review &amp; comments</h3>
+              <p>Evidence of the critique–response process behind the dissertation: external review cycles and the supervisor-guided revisions that shaped the final version.</p>
+              <div class="unit-links">
+                <a href="javascript:void(0);" onclick="toggleSubsection('diss-review')">💬 Review trail</a>
+              </div>
+              <div id="diss-review" class="subsection" style="display:none; margin-top:16px; padding:18px; background:#f8f9fa; border-radius:8px; border-left:4px solid #7b1f2b;">
+                <div class="diss-note">Content pending decision on how supervisor / examiner feedback is represented (include as-is, redact names, or summarise). Links to be added here.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  
     
 
     <div class="contact-section fade-in" style="animation-delay: 0.4s" id="contact">
